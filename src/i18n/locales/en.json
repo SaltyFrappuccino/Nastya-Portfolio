@@ -1,0 +1,122 @@
+{
+  "common": {
+    "contact": "Contact",
+    "backToProjects": "Back to projects",
+    "viewAllProjects": "View all projects"
+  },
+  "header": {
+    "logo": "@creator_aa",
+    "about": "About me",
+    "portfolio": "Portfolio",
+    "cv": "CV",
+    "awards": "Awards",
+    "hrText": "Our vacancies and internships"
+  },
+  "hero": {
+    "name": "Ivanova Anastasia",
+    "role": "product designer",
+    "experience": "7+ years designing",
+    "contacts": "contacts:",
+    "publications": "publications:"
+  },
+  "about": {
+    "mainText": "For over 20 years at CreativePeople, we've been creating design and doing it great",
+    "description": "We focus on the knowledge we've accumulated. We understand how emotions in digital become impressions, and rational interaction results transform into consumer experience",
+    "leadingProjects": "Managing 3 startup projects",
+    "stats": {
+      "websites": "websites developed",
+      "branding": "branding projects",
+      "illustrations": "illustrations",
+      "services": "services created from scratch"
+    }
+  },
+  "categories": {
+    "fintech": "Fintech Design",
+    "mobile": "Mobile Applications",
+    "web": "Websites and Landings",
+    "identity": "Digital Materials - Posts - Identity",
+    "games": "Mobile Games and Concepts",
+    "ai": "Working with AI"
+  },
+  "menu": {
+    "mobileApps": "Mobile Apps",
+    "digitalDesign": "Digital Design",
+    "fintechProjects": "Fintech Projects",
+    "websitesLandings": "Websites & Landings"
+  },
+  "petProjects": {
+    "title": "Pet Projects,\nHackathons, Challenges",
+    "ecology": "Ecology",
+    "iosChallenge": "iOS challenge",
+    "softwareDescription": "Software for determining the state of urban green spaces from photographs",
+    "web3": "Web3.0"
+  },
+  "projects": {
+    "alfaYouth": {
+      "title": "Next Generation Subscription Alfa Youth",
+      "short": "Alfa Youth is a unique subscription for young people that each user can customize for themselves",
+      "full": "Alfa Youth is a unique subscription for young people that each user can customize for themselves. On the Alfa Bank website or app, users will have access to an online assistant that will help determine the optimal set of services.",
+      "client": "@creator_aa"
+    },
+    "tonPlatform": {
+      "title": "TON platform",
+      "short": "Platform for blockchain solutions",
+      "client": "CreativePeople"
+    },
+    "underwriter": {
+      "title": "Service for underwriters",
+      "short": "Internal service for risk assessment",
+      "client": "CreativePeople"
+    },
+    "friendlyTelegram": {
+      "title": "Friendly Telegram Mini App for ITMO",
+      "short": "Friendly – Telegram Mini App for students. Find people by interests, share goals",
+      "full": "Friendly – Telegram Mini App for students. Find people by interests, share goals",
+      "client": "@creator_aa"
+    },
+    "marketplace": {
+      "title": "Corporate Marketplace",
+      "short": "The first corporate marketplace for company employees with a loyalty program",
+      "full": "The first corporate marketplace for company employees with a loyalty program. Simple mechanics, just like Ozon, Yandex Market, Wildberries, both for the mobile app and the seller's cabinet",
+      "client": "@creator_aa"
+    },
+    "greenAnalysis": {
+      "title": "Software for determining the state of urban green spaces from photographs",
+      "short": "Created from scratch a mobile app design for uploading images of green spaces and instant AI-powered analysis of their condition",
+      "full": "Created from scratch a mobile app design for uploading images of green spaces and instant AI-powered analysis of their condition. The system automatically determines plant species, identifies diseases and defects, generates inventory lists and visual charts",
+      "client": "@creator_aa"
+    },
+    "carat": {
+      "title": "Redesign of Carat Furniture Factory Main Page",
+      "short": "Mobile application for uploading images of green spaces and instant AI-powered analysis of their condition",
+      "full": "Mobile application for uploading images of green spaces and instant AI-powered analysis of their condition. The system automatically determines plant species, identifies diseases and defects, generates inventory lists and visual charts",
+      "client": "@creator_aa"
+    },
+    "pandaGifts": {
+      "title": "Targeted Landing Pages for Target Audience",
+      "short": "Together with a marketer, we adapted the company's assets and values for the target audience",
+      "full": "Together with a marketer, we adapted the company's assets and values for the target audience: marketers, HR, designers and architects. We designed 8 major cases, selected graphic materials. We created content, design and adjusted the WordPress template",
+      "client": "CreativePeople"
+    },
+    "friendlyIdentity": {
+      "title": "Friendly Tg Mini App Identity",
+      "short": "Brand identity development for Telegram Mini App",
+      "client": "@creator_aa"
+    },
+    "metroPresentation": {
+      "title": "Presentation Materials for Moscow Metro Technologies",
+      "short": "Design of presentation materials for metro technologies",
+      "client": "CreativePeople"
+    },
+    "vkArVr": {
+      "title": "Posts for VKontakte Group with AR/VR Theme",
+      "short": "Series of posts for VKontakte group with AR/VR content",
+      "client": "CreativePeople"
+    },
+    "alfaIdentity": {
+      "title": "Identity for Alfa Bank Youth Subscription Service",
+      "short": "Brand identity for Alfa Bank youth subscription",
+      "client": "@creator_aa"
+    }
+  }
+}

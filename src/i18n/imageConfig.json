@@ -1,0 +1,9 @@
+{
+  "images": {
+    "_comment": "This config is for future use when we need to support different images for different languages",
+    "hero": {
+      "ru": "/assets/hero-ru.png",
+      "en": "/assets/hero-en.png"
+    }
+  }
+}
