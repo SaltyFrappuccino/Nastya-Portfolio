@@ -23,6 +23,8 @@ export default function CategoryHero({ categoryId }: CategoryHeroProps) {
 
   if (!bannerSrc) return null;
 
+  const isIdentity = categoryId === 'identity';
+
   return (
     <motion.section
       className="w-full overflow-hidden"
@@ -30,11 +32,13 @@ export default function CategoryHero({ categoryId }: CategoryHeroProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="relative w-full aspect-[21/9] min-h-[200px] md:min-h-[320px]">
+      <div
+        className={`relative w-full ${isIdentity ? '' : 'aspect-[21/9] min-h-[200px] md:min-h-[320px]'}`}
+      >
         <img
           src={bannerSrc}
           alt=""
-          className="w-full h-full object-cover object-center"
+          className={`block w-full ${isIdentity ? 'h-auto object-contain object-center' : 'h-full object-cover object-center'}`}
         />
       </div>
     </motion.section>

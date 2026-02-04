@@ -20,7 +20,7 @@ export default function ProjectCard({ project, index = 0, accentBg }: ProjectCar
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       <Link
-        to={`/project/${project.id}`}
+        to={`/project/${project.linkToProjectId ?? project.id}`}
         className="group block hoverable"
       >
         <motion.div

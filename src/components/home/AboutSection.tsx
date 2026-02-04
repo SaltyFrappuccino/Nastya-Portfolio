@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import AnimatedText from '../ui/AnimatedText';
 

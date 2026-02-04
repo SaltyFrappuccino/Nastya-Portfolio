@@ -16,16 +16,19 @@ const blockVariants = {
 };
 
 function TextBlock({ content }: { content: TextContent }) {
+  const isCenter = content.align === 'center';
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-12">
-      {content.title && (
-        <AnimatedText as="h3" className="font-suisse text-xl md:text-2xl text-black mb-4" delay={0.1}>
+    <div className={`max-w-3xl px-4 md:px-8 py-6 md:py-10 ${isCenter ? 'mx-auto text-center' : 'mr-auto ml-0 text-left'}`}>
+      {content.title && content.title.trim() && (
+        <h3 className="font-suisse font-medium text-xl md:text-2xl text-black mb-4 tracking-tight">
           {content.title}
-        </AnimatedText>
+        </h3>
       )}
-      <AnimatedText as="p" className="font-suisse text-base md:text-lg text-text-secondary leading-relaxed whitespace-pre-line" delay={content.title ? 0.2 : 0.1}>
-        {content.text}
-      </AnimatedText>
+      {content.text.trim() && (
+        <p className="font-suisse text-lg md:text-xl text-black leading-[1.6] whitespace-pre-line">
+          {content.text}
+        </p>
+      )}
     </div>
   );
 }
@@ -45,9 +48,9 @@ function ImageBlock({ content }: { content: ImageContent }) {
         className="w-full h-auto"
       />
       {content.caption && (
-        <AnimatedText as="p" className="text-center text-text-secondary text-sm mt-4 font-suisse" delay={0.2}>
+        <p className="text-center text-black/70 text-base mt-4 font-suisse">
           {content.caption}
-        </AnimatedText>
+        </p>
       )}
     </motion.div>
   );
@@ -56,24 +59,24 @@ function ImageBlock({ content }: { content: ImageContent }) {
 function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12"
+      className="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10"
       variants={blockVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         <div>
           {content.left.type === 'text' ? (
             <>
               {(content.left.content as TextContent).title && (
-                <AnimatedText as="h3" className="font-suisse text-xl md:text-2xl text-black mb-4" delay={0.1}>
+                <h3 className="font-suisse font-medium text-xl md:text-2xl text-black mb-4 tracking-tight">
                   {(content.left.content as TextContent).title}
-                </AnimatedText>
+                </h3>
               )}
-              <AnimatedText as="p" className="font-suisse text-base text-text-secondary leading-relaxed" delay={(content.left.content as TextContent).title ? 0.2 : 0.1}>
+              <p className="font-suisse text-lg md:text-xl text-black leading-[1.6]">
                 {(content.left.content as TextContent).text}
-              </AnimatedText>
+              </p>
             </>
           ) : (
             <img
@@ -87,13 +90,13 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
           {content.right.type === 'text' ? (
             <>
               {(content.right.content as TextContent).title && (
-                <AnimatedText as="h3" className="font-suisse text-xl md:text-2xl text-black mb-4" delay={0.15}>
+                <h3 className="font-suisse font-medium text-xl md:text-2xl text-black mb-4 tracking-tight">
                   {(content.right.content as TextContent).title}
-                </AnimatedText>
+                </h3>
               )}
-              <AnimatedText as="p" className="font-suisse text-base text-text-secondary leading-relaxed" delay={(content.right.content as TextContent).title ? 0.25 : 0.15}>
+              <p className="font-suisse text-lg md:text-xl text-black leading-[1.6]">
                 {(content.right.content as TextContent).text}
-              </AnimatedText>
+              </p>
             </>
           ) : (
             <img
@@ -155,9 +158,9 @@ function StatsBlock({ content }: { content: StatsContent }) {
             <AnimatedText as="span" className="block font-suisse text-4xl md:text-6xl text-black mb-2" delay={index * 0.1}>
               {item.value}
             </AnimatedText>
-            <AnimatedText as="span" className="text-text-secondary text-sm md:text-base font-suisse" delay={index * 0.1 + 0.15}>
+            <span className="block font-suisse text-base md:text-lg text-black/80 mt-1">
               {item.label}
-            </AnimatedText>
+            </span>
           </div>
         ))}
       </div>

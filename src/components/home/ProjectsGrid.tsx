@@ -15,9 +15,9 @@ interface CategorySection {
 
 const categories: CategorySection[] = [
   { category: 'Fintech', title: 'Дизайн в Fintech', client: '@creator_aa' },
-  { category: 'Mobile', title: 'Мобильные приложения', client: 'CreativePeople' },
-  { category: 'Web', title: 'Веб сайты, лендинги и сервисы', client: 'CreativePeople' },
-  { category: 'Identity', title: 'Digital материалы, айдентика', client: 'CreativePeople' },
+  { category: 'Mobile', title: 'Мобильные приложения', client: '@creator_aa' },
+  { category: 'Web', title: 'Веб сайты, лендинги и сервисы', client: '@creator_aa' },
+  { category: 'Identity', title: 'Digital материалы, айдентика', client: '@creator_aa' },
 ];
 
 const sectionVariants = {

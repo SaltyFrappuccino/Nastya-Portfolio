@@ -3,6 +3,8 @@ export type BlockType = 'image' | 'text' | 'two-columns' | 'gallery' | 'video' |
 export interface TextContent {
   title?: string;
   text: string;
+  /** Выравнивание: по центру (как вводный текст) или по левому краю (как в макете для Альфа Дейтинг / Альфа потсы) */
+  align?: 'left' | 'center';
 }
 
 export interface ImageContent {
@@ -52,6 +54,8 @@ export interface Project {
   category: ProjectCategory;
   thumbnailUrl: string;
   shortDescription: string;
+  /** Если задано, при клике на карточку открывается страница этого проекта (для дублей/айдентики того же кейса) */
+  linkToProjectId?: string;
   client?: string;
   year?: string;
   role?: string;

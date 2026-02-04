@@ -30,13 +30,13 @@ export default function CategoryPage() {
       id: 'mobile',
       titleKey: 'categories.mobile',
       category: 'Mobile',
-      client: 'CreativePeople',
+      client: '@creator_aa',
     },
     web: {
       id: 'web',
       titleKey: 'categories.web',
       category: 'Web',
-      client: 'CreativePeople',
+      client: '@creator_aa',
     },
     identity: {
       id: 'identity',

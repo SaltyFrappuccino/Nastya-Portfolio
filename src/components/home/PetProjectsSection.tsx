@@ -44,7 +44,7 @@ export default function PetProjectsSection() {
       thumbnailUrl: iosChallengeImage,
     },
     {
-      id: 'green-analysis-pet',
+      id: 'green-analysis',
       title: 'Программное обеспечение',
       categoryKey: 'petProjects.softwareDescription',
       thumbnailUrl: greenAppImage,
@@ -157,7 +157,7 @@ export default function PetProjectsSection() {
                   src={petProjects[2].thumbnailUrl}
                   alt={petProjects[2].title}
                   className="w-full h-auto object-contain"
-                  onError={(e) => {
+                  onError={() => {
                     console.error('Image failed to load:', petProjects[2].thumbnailUrl);
                   }}
                 />

@@ -11,14 +11,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const params = useParams();
-  const isDarkPage = location.pathname.startsWith('/project');
-  
-  // Определяем категорию проекта, если мы на странице проекта
   const projectCategoryPath = (() => {
     if (location.pathname.startsWith('/project/') && params.id) {
       const project = getProjectById(params.id);
       if (project) {
-        // Маппинг категорий проектов к путям меню
         const categoryMap: Record<string, string> = {
           'Web': '/category/web',
           'Mobile': '/category/mobile',
@@ -59,12 +55,12 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 ${isDarkPage ? 'bg-black border-b border-white/10' : 'bg-white border-b border-black/5'}`}>
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 bg-white border-b border-black/5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className={`inline-flex items-center justify-center px-5 py-2.5 text-sm font-suisse hoverable ${isDarkPage && !isMenuOpen ? 'text-white' : 'text-black'}`}
+            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-suisse hoverable text-black"
           >
             {t('header.logo')}
           </Link>
@@ -75,25 +71,25 @@ export default function Header() {
             className="flex flex-col items-center justify-center gap-1.5 p-3 hoverable"
             aria-label="Toggle menu"
           >
-            <span className={`w-7 h-0.5 transition-all ${isDarkPage && !isMenuOpen ? 'bg-white' : 'bg-black'}`} />
-            <span className={`w-7 h-0.5 transition-all ${isDarkPage && !isMenuOpen ? 'bg-white' : 'bg-black'}`} />
-            <span className={`w-7 h-0.5 transition-all ${isDarkPage && !isMenuOpen ? 'bg-white' : 'bg-black'}`} />
+            <span className="w-7 h-0.5 transition-all bg-black" />
+            <span className="w-7 h-0.5 transition-all bg-black" />
+            <span className="w-7 h-0.5 transition-all bg-black" />
           </button>
 
           {/* Right side - Language + Phone + Contact button */}
           <div className="hidden md:flex items-center gap-4">
-            <div className={isDarkPage && !isMenuOpen ? 'text-white' : 'text-black'}>
+            <div className="text-black">
               <LanguageSwitcher />
             </div>
             <a
               href="tel:+79009994545"
-              className={`font-suisse text-sm hoverable ${isDarkPage && !isMenuOpen ? 'text-white' : 'text-black'}`}
+              className="font-suisse text-sm hoverable text-black"
             >
               +7 900 999 45 45
             </a>
             <Link
               to="/contact"
-              className={`inline-flex items-center justify-center px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[120px] ${isDarkPage && !isMenuOpen ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[120px] bg-black text-white hover:bg-gray-800"
               style={{ borderRadius: '0' }}
             >
               {t('common.contact')}
