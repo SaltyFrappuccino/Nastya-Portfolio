@@ -7,6 +7,7 @@ const alfaYouth3 = new URL('../assets/sorted/Подписка нового по�
 const alfaYouth4 = new URL('../assets/sorted/Подписка нового поколения Alfa Youth 4.png', import.meta.url).href;
 
 const friendlyLogo = new URL('../assets/sorted/Friendly.png', import.meta.url).href;
+const friendlyMiniApp = new URL('../assets/sorted/Friendly Telegram Mini App.png', import.meta.url).href;
 const friendlyItmo1 = new URL('../assets/sorted/Friendly Telegram  Mini App для ИТМО 1.png', import.meta.url).href;
 const friendlyItmo2 = new URL('../assets/sorted/Friendly Telegram  Mini App для ИТМО 2.png', import.meta.url).href;
 const friendlyItmo3 = new URL('../assets/sorted/Friendly Telegram  Mini App для ИТМО 3.png', import.meta.url).href;
@@ -21,15 +22,17 @@ const pandaGifts = new URL('../assets/sorted/Точечные лендинги �
 
 const greenApp = new URL('../assets/sorted/AgroSpector.png', import.meta.url).href;
 const greenAppFull = new URL('../assets/sorted/ПО для определения характеристик состояния зелёных насаждений города по фотографиям.png', import.meta.url).href;
+const agrospectorCard = new URL('../assets/sorted/AgroSpector - умный помощник садовода.png', import.meta.url).href;
 
 const alfaIdentity = new URL('../assets/sorted/Айдентика сервиса молодежной подписки Альфа Банка.png', import.meta.url).href;
 
 const mobileGames = new URL('../assets/sorted/Mobile Games and Concepts.png', import.meta.url).href;
-const web3 = new URL('../assets/sorted/Web3.png', import.meta.url).href;
+const tonPlatform = new URL('../assets/sorted/TON platform.png', import.meta.url).href;
 const workAI = new URL('../assets/sorted/Work with AI.png', import.meta.url).href;
 const saluteAI = new URL('../assets/sorted/Salute AI.png', import.meta.url).href;
 const iosChallenge = new URL('../assets/sorted/iOS Challenge.png', import.meta.url).href;
 const blank = new URL('../assets/sorted/blank.png', import.meta.url).href;
+const underwriterImage = new URL('../assets/sorted/Цифровой помощник  для андеррайтеров в зеленом финтехе.png', import.meta.url).href;
 
 export const projects: Project[] = [
   // Fintech
@@ -92,7 +95,7 @@ export const projects: Project[] = [
     id: 'ton-platform',
     title: 'TON platform',
     category: 'Fintech',
-    thumbnailUrl: web3,
+    thumbnailUrl: tonPlatform,
     shortDescription: 'Дизайн платформы для TON экосистемы',
     client: '@creator_aa',
     year: '2024',
@@ -101,7 +104,7 @@ export const projects: Project[] = [
       {
         type: 'image',
         content: {
-          src: web3,
+          src: tonPlatform,
           alt: 'TON Platform',
         },
       },
@@ -109,19 +112,35 @@ export const projects: Project[] = [
   },
   {
     id: 'underwriter-service',
-    title: 'Сервис для андеррайтеров',
+    title: 'Микросервисы: Цифровой помощник в кредитном процессе для СБЕРА',
     category: 'Fintech',
-    thumbnailUrl: blank,
-    shortDescription: 'Внутренний сервис для работы андеррайтеров банка',
+    thumbnailUrl: underwriterImage,
+    shortDescription: 'Задача: интегрировать цифрового помощника в процесс обработки кредитных заявок, попавших на ручное рассмотрение, и оптимизировать процесс, сократив время обработки одной заявки.',
     client: '@creator_aa',
     year: '2024',
     role: 'Product Designer',
+    fullDescription: 'Задача: интегрировать цифрового помощника в процесс обработки кредитных заявок, попавших на ручное рассмотрение, и оптимизировать процесс, сократив время обработки одной заявки.',
+    coverImage: underwriterImage,
     content: [
       {
         type: 'image',
         content: {
-          src: blank,
-          alt: 'Сервис для андеррайтеров',
+          src: underwriterImage,
+          alt: 'Цифровой помощник в кредитном процессе для СБЕРА',
+        },
+      },
+      {
+        type: 'text',
+        content: {
+          text: 'Мы с командой разработали минимальный жизнеспособный вариант веб-приложения, сфокусированный на backend-части (разработка микросервисов, обеспечивающих получение, обработку и хранение информации по заявке, взаимодействие с ассистентом) и frontend (создание пользовательского интерфейса для визуализации и ввода информации). Мы добавили новые навыки для цифрового ассистента из семейства Салют, что позволило создать полноценный рабочий инструмент под задачу андеррайтера.',
+        },
+      },
+      {
+        type: 'stats',
+        content: {
+          items: [
+            { value: '70%', label: 'Процент одобрения заявки цифровым помощником, который помогает андеррайтеру принять решение' },
+          ],
         },
       },
     ],
@@ -132,13 +151,13 @@ export const projects: Project[] = [
     id: 'friendly-telegram',
     title: 'Friendly Telegram Mini App для ИТМО',
     category: 'Mobile',
-    thumbnailUrl: friendlyItmo1,
+    thumbnailUrl: friendlyMiniApp,
     shortDescription: 'Friendly — Telegram Mini App для студентов. Находи людей по интересам, вайбу и целям',
     client: '@creator_aa',
     year: '2024',
     role: 'Product Designer',
     fullDescription: 'Friendly — Telegram Mini App для студентов. Находи людей по интересам, вайбу и целям. Вместо свайпов — персональные рекомендации. Для дружбы, учебы, тусовок, нетворкинга и отношений.',
-    coverImage: friendlyItmo1,
+    coverImage: friendlyMiniApp,
     content: [
       {
         type: 'image',
@@ -265,6 +284,26 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: 'agrospector',
+    title: 'AgroSpector - умный помощник садовода',
+    category: 'Mobile',
+    thumbnailUrl: agrospectorCard,
+    shortDescription: 'Умный помощник садовода: каталог, распознавание по фото, мой сад',
+    client: '@creator_aa',
+    year: '2024',
+    role: 'Product Designer',
+    coverImage: agrospectorCard,
+    content: [
+      {
+        type: 'image',
+        content: {
+          src: agrospectorCard,
+          alt: 'AgroSpector - умный помощник садовода',
+        },
+      },
+    ],
+  },
 
   // Web
   {
@@ -272,7 +311,7 @@ export const projects: Project[] = [
     title: 'Редизайн главной страницы сайта мебельной фабрики Carat',
     category: 'Web',
     thumbnailUrl: caratCover,
-    shortDescription: 'Мобильное приложение для загрузки изображений зелёных насаждений и мгновенного анализа их состояния с помощью ИИ',
+    shortDescription: 'Редизайн главной страницы с акцентом на навигацию, каталог, коллекции и визуальную привлекательность мебельного бренда Carat.',
     client: '@creator_aa',
     year: '2024',
     role: 'Product Designer',
@@ -421,11 +460,25 @@ export const projects: Project[] = [
   },
 ];
 
+/** Порядок проектов по категориям — как на референсах (data/2–5.png) */
+export const CATEGORY_PROJECT_IDS: Record<string, string[]> = {
+  fintech: ['alfa-youth', 'underwriter-service', 'ton-platform'],
+  mobile: ['alfa-youth', 'friendly-telegram', 'green-analysis', 'corporate-marketplace', 'agrospector'],
+  web: ['carat-furniture', 'panda-gifts'],
+  identity: ['alfa-identity', 'friendly-identity', 'vk-ar-vr', 'ton-platform'],
+};
+
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
 }
 
 export function getProjectsByCategory(category: ProjectCategory): Project[] {
   return projects.filter((p) => p.category === category);
+}
+
+export function getProjectsForCategoryPage(categoryId: string): Project[] {
+  const ids = CATEGORY_PROJECT_IDS[categoryId];
+  if (!ids) return [];
+  return ids.map((id) => getProjectById(id)).filter((p): p is Project => p != null);
 }
 

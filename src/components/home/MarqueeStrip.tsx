@@ -1,21 +1,10 @@
 import { motion } from 'framer-motion';
 
-const marqueeItems = [
-  'UX/UI design',
-  'UX Searches',
-  'VR/AR',
-  'Comunication design',
-  'Mobile Apps',
-  'Web Design',
-  'Fintech',
-  'Product Design',
-];
+const marqueeText = '/UI design UX Searches VR/ ';
 
 export default function MarqueeStrip() {
-  const marqueeText = marqueeItems.join(' / ') + ' / ';
-
   return (
-    <div className="bg-black py-4 md:py-6 overflow-hidden border-y border-white/10">
+    <div className="bg-white py-4 md:py-6 overflow-hidden border-y border-black/10">
       <div className="flex">
         <motion.div
           className="flex whitespace-nowrap"
@@ -24,16 +13,15 @@ export default function MarqueeStrip() {
             x: {
               repeat: Infinity,
               repeatType: 'loop',
-              duration: 30,
+              duration: 25,
               ease: 'linear',
             },
           }}
         >
-          {/* Duplicate content for seamless loop */}
-          {[...Array(4)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <span
               key={i}
-              className="text-white font-evolventa text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mx-4"
+              className="text-black font-evolventa text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mx-6"
             >
               {marqueeText}
             </span>

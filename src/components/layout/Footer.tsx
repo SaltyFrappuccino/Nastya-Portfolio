@@ -1,11 +1,40 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
+import { getProjectById } from '../../data/projects';
+
+const fintechFooter = new URL('../../assets/sorted/Дизайн в Fintech footer.png', import.meta.url).href;
+const mobileFooter = new URL('../../assets/sorted/Мобильные приложения footer.png', import.meta.url).href;
+const webFooter = new URL('../../assets/sorted/Веб сайты, лендинги и сервисы footer.png', import.meta.url).href;
+const identityFooter = new URL('../../assets/sorted/Айдентика и digital - материалы footer.png', import.meta.url).href;
+
+function getCategoryFooterSrc(pathname: string, projectCategory?: string): string | null {
+  if (pathname.startsWith('/category/')) {
+    const id = pathname.replace('/category/', '');
+    if (id === 'fintech') return fintechFooter;
+    if (id === 'mobile') return mobileFooter;
+    if (id === 'web') return webFooter;
+    if (id === 'identity') return identityFooter;
+    return null;
+  }
+  if (pathname.startsWith('/project/') && projectCategory) {
+    if (projectCategory === 'Fintech') return fintechFooter;
+    if (projectCategory === 'Mobile') return mobileFooter;
+    if (projectCategory === 'Web') return webFooter;
+    if (projectCategory === 'Identity') return identityFooter;
+  }
+  if (pathname === '/') return mobileFooter;
+  return mobileFooter;
+}
 
 export default function Footer() {
   const { t } = useTranslation();
-  
+  const location = useLocation();
+  const { id: projectId } = useParams<{ id: string }>();
+  const project = projectId ? getProjectById(projectId) : undefined;
+  const categoryFooterSrc = getCategoryFooterSrc(location.pathname, project?.category);
+
   const footerData = {
     about: [
       { label: t('header.cv'), href: '/cv' },
@@ -33,6 +62,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-background-footer text-white">
+      {categoryFooterSrc && (
+        <div className="w-full">
+          <img
+            src={categoryFooterSrc}
+            alt=""
+            className="w-full h-auto object-cover object-center block"
+          />
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
         {/* Language Switcher */}
         <div className="flex justify-end mb-8">

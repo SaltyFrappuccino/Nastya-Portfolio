@@ -8,8 +8,6 @@ const fintechPreview = new URL('../../assets/sorted/landing/Дизайн в Fint
 const mobilePreview = new URL('../../assets/sorted/landing/Мобильные приложения.png', import.meta.url).href;
 const webPreview = new URL('../../assets/sorted/landing/Веб сайты и лендинги.png', import.meta.url).href;
 const identityPreview = new URL('../../assets/sorted/landing/Digital материалы - Посты - Айдентика.png', import.meta.url).href;
-const gamesPreview = new URL('../../assets/sorted/landing/Мобильные  игры и концепты.png', import.meta.url).href;
-const aiPreview = new URL('../../assets/sorted/landing/Работа с нейросетями.png', import.meta.url).href;
 
 interface Category {
   id: string;
@@ -132,18 +130,6 @@ export default function CategoriesList() {
       titleKey: 'categories.identity',
       previewImage: identityPreview,
       href: '/category/identity',
-    },
-    {
-      id: 'games',
-      titleKey: 'categories.games',
-      previewImage: gamesPreview,
-      href: '/category/games',
-    },
-    {
-      id: 'ai',
-      titleKey: 'categories.ai',
-      previewImage: aiPreview,
-      href: '/category/ai',
     },
   ];
 

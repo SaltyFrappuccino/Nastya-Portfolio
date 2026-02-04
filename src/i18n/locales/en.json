@@ -33,7 +33,7 @@
   "categories": {
     "fintech": "Fintech Design",
     "mobile": "Mobile Applications",
-    "web": "Websites and Landings",
+    "web": "Websites, landings and services",
     "identity": "Digital Materials - Posts - Identity",
     "games": "Mobile Games and Concepts",
     "ai": "Working with AI"
@@ -42,7 +42,7 @@
     "mobileApps": "Mobile Apps",
     "digitalDesign": "Digital Design",
     "fintechProjects": "Fintech Projects",
-    "websitesLandings": "Websites & Landings"
+    "websitesLandings": "Websites, landings and services"
   },
   "petProjects": {
     "title": "Pet Projects,\nHackathons, Challenges",
@@ -64,9 +64,9 @@
       "client": "CreativePeople"
     },
     "underwriter": {
-      "title": "Service for underwriters",
-      "short": "Internal service for risk assessment",
-      "client": "CreativePeople"
+      "title": "Microservices: Digital assistant in the credit process for SBER",
+      "short": "Task: integrate a digital assistant into the credit application processing workflow for manual review and optimize the process, reducing the time to process a single application.",
+      "client": "@creator_aa"
     },
     "friendlyTelegram": {
       "title": "Friendly Telegram Mini App for ITMO",
@@ -88,8 +88,8 @@
     },
     "carat": {
       "title": "Redesign of Carat Furniture Factory Main Page",
-      "short": "Mobile application for uploading images of green spaces and instant AI-powered analysis of their condition",
-      "full": "Mobile application for uploading images of green spaces and instant AI-powered analysis of their condition. The system automatically determines plant species, identifies diseases and defects, generates inventory lists and visual charts",
+      "short": "Redesign of the main page with focus on navigation, catalog, collections and visual appeal of the Carat furniture brand.",
+      "full": "Redesign of the main page with focus on visual appeal and ease of navigation.",
       "client": "@creator_aa"
     },
     "pandaGifts": {

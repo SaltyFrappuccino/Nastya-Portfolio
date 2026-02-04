@@ -59,16 +59,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4">
+      <header className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 ${isDarkPage ? 'bg-black border-b border-white/10' : 'bg-white border-b border-black/5'}`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className={`inline-flex items-center justify-center px-5 py-2.5 text-sm font-suisse hoverable ${
-              isDarkPage && !isMenuOpen
-                ? 'text-white'
-                : 'text-black'
-            }`}
+            className={`inline-flex items-center justify-center px-5 py-2.5 text-sm font-suisse hoverable ${isDarkPage && !isMenuOpen ? 'text-white' : 'text-black'}`}
           >
             {t('header.logo')}
           </Link>
@@ -90,14 +86,14 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
             <a
-              href="tel:+79154146901"
+              href="tel:+79009994545"
               className={`font-suisse text-sm hoverable ${isDarkPage && !isMenuOpen ? 'text-white' : 'text-black'}`}
             >
-              +7 915 414 69 01
+              +7 900 999 45 45
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 bg-black text-white text-sm font-suisse hoverable transition-colors hover:bg-gray-800 min-w-[120px]"
+              className={`inline-flex items-center justify-center px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[120px] ${isDarkPage && !isMenuOpen ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}
               style={{ borderRadius: '0' }}
             >
               {t('common.contact')}
@@ -122,6 +118,7 @@ export default function Header() {
                 to="/"
                 onClick={() => setIsMenuOpen(false)}
                 className="inline-flex items-center justify-center px-5 py-2.5 text-white text-sm font-suisse hoverable"
+                style={{ mixBlendMode: 'difference' }}
               >
                 {t('header.logo')}
               </Link>

@@ -6,9 +6,12 @@ import AnimatedText from '../ui/AnimatedText';
 interface ProjectCardProps {
   project: Project;
   index?: number;
+  accentBg?: 'red' | 'blue';
 }
 
-export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0, accentBg }: ProjectCardProps) {
+  const bgClass = accentBg === 'red' ? 'bg-red-500' : accentBg === 'blue' ? 'bg-blue-500' : 'bg-background-light';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -21,7 +24,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         className="group block hoverable"
       >
         <motion.div
-          className="relative bg-background-light overflow-hidden"
+          className={`relative ${bgClass} overflow-hidden`}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >

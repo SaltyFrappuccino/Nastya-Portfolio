@@ -5,7 +5,7 @@ import AnimatedText from '../ui/AnimatedText';
 const categories = [
   { id: 'fintech', label: 'Дизайн в Fintech', href: '/#fintech' },
   { id: 'mobile', label: 'Мобильные приложения', href: '/#mobile' },
-  { id: 'web', label: 'Веб сайты и лендинги', href: '/#web' },
+  { id: 'web', label: 'Веб сайты, лендинги и сервисы', href: '/#web' },
   { id: 'digital', label: 'Digital материалы - Посты - Айдентика', href: '/#identity' },
   { id: 'games', label: 'Мобильные игры и концепты', href: '/#games' },
   { id: 'ai', label: 'Работа с нейросетями', href: '/#ai' },
