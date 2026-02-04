@@ -4,7 +4,7 @@ const marqueeText = '/UI design UX Searches VR/ ';
 
 export default function MarqueeStrip() {
   return (
-    <div className="bg-white py-4 md:py-6 overflow-hidden border-y border-black/10">
+    <div className="bg-white py-3 md:py-6 overflow-hidden border-y border-black/10">
       <div className="flex">
         <motion.div
           className="flex whitespace-nowrap"

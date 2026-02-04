@@ -18,7 +18,7 @@ const blockVariants = {
 function TextBlock({ content }: { content: TextContent }) {
   const isCenter = content.align === 'center';
   return (
-    <div className={`max-w-3xl px-4 md:px-8 py-6 md:py-10 ${isCenter ? 'mx-auto text-center' : 'mr-auto ml-0 text-left'}`}>
+    <div className={`max-w-3xl px-4 md:px-8 py-4 md:py-10 ${isCenter ? 'mx-auto text-center' : 'mr-auto ml-0 text-left'}`}>
       {content.title && content.title.trim() && (
         <h3 className="font-suisse font-medium text-xl md:text-2xl text-black mb-4 tracking-tight">
           {content.title}
@@ -59,7 +59,7 @@ function ImageBlock({ content }: { content: ImageContent }) {
 function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
   return (
     <motion.div
-      className="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10"
+      className="max-w-5xl mx-auto px-4 md:px-8 py-4 md:py-10"
       variants={blockVariants}
       initial="hidden"
       whileInView="visible"
@@ -117,7 +117,7 @@ function GalleryBlock({ content }: { content: GalleryContent }) {
 
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8"
+      className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-8"
       variants={blockVariants}
       initial="hidden"
       whileInView="visible"
@@ -146,7 +146,7 @@ function GalleryBlock({ content }: { content: GalleryContent }) {
 function StatsBlock({ content }: { content: StatsContent }) {
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20"
+      className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-20"
       variants={blockVariants}
       initial="hidden"
       whileInView="visible"

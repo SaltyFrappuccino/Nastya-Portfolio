@@ -37,9 +37,9 @@ function CategoryItem({ category, index }: { category: Category; index: number }
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
     >
-      <div className="relative w-full flex items-center gap-2 md:gap-4 py-3 md:py-4 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative w-full flex flex-col md:flex-row md:items-center gap-3 md:gap-4 py-3 md:py-4 px-4 sm:px-6 md:px-8 lg:px-12">
         <motion.div 
-          className="flex-1 flex items-center group relative"
+          className="flex-1 flex items-center group relative w-full md:w-auto"
           whileHover={{ 
             x: 15, 
             scale: 1.05,
@@ -52,10 +52,10 @@ function CategoryItem({ category, index }: { category: Category; index: number }
         >
           <Link
             to={category.href}
-            className="hoverable"
+            className="hoverable min-h-[44px] flex items-center"
           >
             <h2 
-              className="font-suisse text-[5vw] sm:text-[4vw] md:text-[3.5vw] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-normal leading-tight relative"
+              className="font-suisse text-lg sm:text-[4vw] md:text-[3.5vw] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-normal leading-tight relative"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -82,7 +82,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
         </motion.div>
         
         <motion.div 
-          className="flex-1"
+          className="flex-1 w-full md:w-auto"
           whileHover={{ 
             scale: 1.08, 
             rotate: 2,

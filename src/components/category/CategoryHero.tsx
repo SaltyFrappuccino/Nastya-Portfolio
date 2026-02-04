@@ -33,7 +33,7 @@ export default function CategoryHero({ categoryId }: CategoryHeroProps) {
       transition={{ duration: 0.6 }}
     >
       <div
-        className={`relative w-full ${isIdentity ? '' : 'aspect-[21/9] min-h-[200px] md:min-h-[320px]'}`}
+        className={`relative w-full ${isIdentity ? '' : 'aspect-[21/9] min-h-[160px] sm:min-h-[200px] md:min-h-[320px]'}`}
       >
         <img
           src={bannerSrc}

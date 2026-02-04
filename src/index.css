@@ -65,12 +65,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #F4F4F4;
   color: #000000;
-  cursor: none;
 }
 
-/* Hide default cursor on interactive elements */
-a, button, [role="button"], input, textarea, select {
-  cursor: none;
+/* Hide default cursor only on pointer devices (mouse); keep default on touch */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], input, textarea, select {
+    cursor: none;
+  }
 }
 
 /* Hide scrollbar but keep functionality */

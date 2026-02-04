@@ -50,7 +50,7 @@ export default function HeroSection() {
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
           {/* Left - Title */}
           <motion.div variants={itemVariants} className="lg:max-w-xl">
-            <h1 className="font-evolventa text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
+            <h1 className="font-evolventa text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
               <span className="relative inline-block px-2 py-1">
                 <span 
                   className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-500 to-orange-500"
@@ -74,10 +74,10 @@ export default function HeroSection() {
             </h1>
           </motion.div>
 
-          {/* Right - Contacts Grid */}
+          {/* Right - Contacts Grid: stack on very small screens */}
           <motion.div
             variants={itemVariants}
-            className="flex gap-8 lg:gap-12"
+            className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-12"
           >
             {/* Contacts Column */}
             <div>

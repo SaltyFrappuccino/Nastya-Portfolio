@@ -15,7 +15,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white text-black pt-24 md:pt-28 pb-16 md:pb-24">
+    <main className="min-h-screen bg-white text-black pt-20 md:pt-28 pb-12 md:pb-24">
       <div className="max-w-[1800px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Hero: title, client, description */}
         <motion.header

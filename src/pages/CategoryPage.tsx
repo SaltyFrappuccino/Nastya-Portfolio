@@ -63,10 +63,10 @@ export default function CategoryPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
           <AnimatedText
             as="h1"
-            className="font-evolventa text-3xl md:text-5xl lg:text-6xl font-normal text-black"
+            className="font-evolventa text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-normal text-black"
             delay={0.1}
           >
             {t(info.titleKey)}

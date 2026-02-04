@@ -55,7 +55,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 bg-white border-b border-black/5">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 pt-[max(1rem,env(safe-area-inset-top))] bg-white border-b border-black/5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -65,10 +65,10 @@ export default function Header() {
             {t('header.logo')}
           </Link>
 
-          {/* Burger Menu Button */}
+          {/* Burger Menu Button - min 44px touch target */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex flex-col items-center justify-center gap-1.5 p-3 hoverable"
+            className="flex flex-col items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] p-3 hoverable"
             aria-label="Toggle menu"
           >
             <span className="w-7 h-0.5 transition-all bg-black" />
@@ -121,7 +121,7 @@ export default function Header() {
 
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="p-3 hoverable"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-3 hoverable"
                 aria-label="Close menu"
               >
                 <X className="w-8 h-8 text-white" strokeWidth={1.5} />
@@ -245,12 +245,12 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Big Contact Button */}
-              <div className="mt-16 md:mt-24 flex justify-center">
+              {/* Big Contact Button - adaptive width on mobile */}
+              <div className="mt-16 md:mt-24 flex justify-center px-4 md:px-0">
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-flex items-center justify-center px-20 py-4 border border-white text-white text-xl font-suisse hoverable hover:bg-white hover:text-black transition-all min-w-[280px]"
+                  className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-12 md:px-20 py-4 border border-white text-white text-lg md:text-xl font-suisse hoverable hover:bg-white hover:text-black transition-all"
                   style={{ borderRadius: '0' }}
                 >
                   {t('common.contact')}

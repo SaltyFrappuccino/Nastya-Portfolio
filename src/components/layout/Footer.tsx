@@ -71,7 +71,7 @@ export default function Footer() {
           />
         </div>
       )}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-[calc(5rem+env(safe-area-inset-bottom))]">
         {/* Language Switcher */}
         <div className="flex justify-end mb-8">
           <LanguageSwitcher />
@@ -155,11 +155,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Big Contact Button */}
-        <div className="flex justify-center">
+        {/* Big Contact Button - adaptive on mobile */}
+        <div className="flex justify-center px-4 md:px-0">
           <motion.a
             href="/contact"
-            className="inline-flex items-center justify-center px-20 py-4 border border-white text-white text-xl font-suisse hoverable transition-all hover:bg-white hover:text-black"
+            className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-12 md:px-20 py-4 border border-white text-white text-lg md:text-xl font-suisse hoverable transition-all hover:bg-white hover:text-black"
             style={{ borderRadius: '0' }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

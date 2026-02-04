@@ -61,7 +61,7 @@ export default function PetProjectsSection() {
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1800px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Asymmetric Grid Layout */}
-        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-12 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
           
           {/* First project - top left, small */}
           <motion.div
@@ -73,7 +73,7 @@ export default function PetProjectsSection() {
           >
             <Link
               to={`/project/${petProjects[0].id}`}
-              className="block group hoverable"
+              className="block group hoverable min-h-[44px]"
             >
               <motion.div
                 className="rounded-xl overflow-hidden mb-3 bg-gray-100"
