@@ -47,31 +47,33 @@ export default function PetProjectsSection() {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-8">
         {/* Title row: empty left + title right */}
-        <div className="grid grid-cols-2 gap-6 md:gap-10 mb-10 md:mb-16">
+        <div className="grid grid-cols-2 gap-6 md:gap-10 mb-16 md:mb-24 lg:mb-32">
           <div />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex justify-end"
           >
-            <h2 className="font-suisse text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black leading-tight">
+            <h2 className="font-suisse text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black leading-tight text-right">
               Пет&nbsp;-&nbsp;проекты,<br />хакатоны, челленджи
             </h2>
           </motion.div>
         </div>
 
-        {/* Slightly staggered 2x2 grid */}
-        <div className="grid grid-cols-2 gap-6 md:gap-10">
+        {/* Chaotic grid layout */}
+        <div className="grid grid-cols-2 gap-x-8 md:gap-x-16 lg:gap-x-32 gap-y-16 md:gap-y-24">
           {petProjects.map((project, index) => {
-            const offsetClass = [
-              'md:mt-0',
-              'md:mt-8',
-              'md:mt-6',
-              'md:mt-2',
-            ][index];
+            // Custom offsets for chaotic look matching reference
+            let offsetClass = '';
+            if (index === 0) offsetClass = 'mt-0'; // First project (Ecology) - top left
+            if (index === 1) offsetClass = 'mt-32 md:mt-48 lg:mt-64'; // Second project (iOS) - pushed way down
+            if (index === 2) offsetClass = '-mt-16 md:-mt-24'; // Third (Green app) - pulled up
+            if (index === 3) offsetClass = 'mt-16 md:mt-32'; // Fourth (Web3) - pushed down again
+
             return (
               <motion.div
                 key={project.id}
@@ -86,7 +88,7 @@ export default function PetProjectsSection() {
                   className="block group hoverable"
                 >
                   <motion.div
-                    className="overflow-hidden mb-4"
+                    className="overflow-hidden mb-4 md:mb-6"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -96,7 +98,7 @@ export default function PetProjectsSection() {
                       className="w-full h-auto object-contain"
                     />
                   </motion.div>
-                  <p className="font-suisse text-sm md:text-base text-black/70 group-hover:text-black transition-colors">
+                  <p className="font-suisse text-base md:text-lg text-black/70 group-hover:text-black transition-colors">
                     {project.label}
                   </p>
                 </Link>
