@@ -39,7 +39,7 @@ export default function HeroSection() {
   const { t } = useTranslation();
   
   return (
-    <section className="pt-24 md:pt-32 pb-8 px-4 md:px-8 bg-white">
+    <section className="pt-20 md:pt-28 pb-6 md:pb-8 px-4 md:px-8 bg-white">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}
@@ -47,11 +47,11 @@ export default function HeroSection() {
         animate="visible"
       >
         {/* Top Section - Title and Contacts */}
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 md:gap-8">
           {/* Left - Title */}
           <motion.div variants={itemVariants} className="lg:max-w-xl">
-            <h1 className="font-evolventa text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
-              <span className="relative inline-block px-2 py-1">
+            <h1 className="font-evolventa text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black leading-tight">
+              <span className="relative inline-block px-1.5 md:px-2 py-0.5 md:py-1">
                 <span 
                   className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-500 to-orange-500"
                   style={{ 
@@ -77,7 +77,7 @@ export default function HeroSection() {
           {/* Right - Contacts Grid: stack on very small screens */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12"
           >
             {/* Contacts Column */}
             <div>
@@ -91,7 +91,7 @@ export default function HeroSection() {
                     href={contact.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-black/70 hover:text-black transition-colors font-suisse text-sm hoverable"
+                    className="block text-black/70 hover:text-black transition-colors font-suisse text-xs sm:text-sm hoverable"
                   >
                     <AnimatedText as="span" delay={0.15 + index * 0.05}>
                       {contact.label}
@@ -113,7 +113,7 @@ export default function HeroSection() {
                     href={pub.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-black/70 hover:text-black transition-colors font-suisse text-sm hoverable"
+                    className="block text-black/70 hover:text-black transition-colors font-suisse text-xs sm:text-sm hoverable"
                   >
                     <AnimatedText as="span" delay={0.25 + index * 0.05}>
                       {pub.label}

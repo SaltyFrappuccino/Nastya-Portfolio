@@ -72,22 +72,22 @@ export default function Footer() {
           />
         </div>
       )}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-[calc(3rem+env(safe-area-inset-bottom))] md:pb-[calc(5rem+env(safe-area-inset-bottom))]">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-16 lg:pt-20 pb-[calc(2rem+env(safe-area-inset-bottom))] md:pb-[calc(4rem+env(safe-area-inset-bottom))] lg:pb-[calc(5rem+env(safe-area-inset-bottom))]">
         {/* Language Switcher */}
-        <div className="flex justify-end mb-8">
+        <div className="flex justify-end mb-6 md:mb-8">
           <LanguageSwitcher />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mb-10 md:mb-12">
           {/* About Column */}
           <div>
-            <h3 className="text-gray-500 text-sm mb-4 font-suisse">{t('header.about')}</h3>
-            <ul className="space-y-3">
+            <h3 className="text-gray-500 text-xs sm:text-sm mb-3 md:mb-4 font-suisse">{t('header.about')}</h3>
+            <ul className="space-y-2 md:space-y-3">
               {footerData.about.map((item) => (
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className="text-white text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
+                    className="text-white text-lg sm:text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -98,13 +98,13 @@ export default function Footer() {
 
           {/* Portfolio Column */}
           <div>
-            <h3 className="text-gray-500 text-sm mb-4 font-suisse">{t('header.portfolio')}</h3>
-            <ul className="space-y-3">
+            <h3 className="text-gray-500 text-xs sm:text-sm mb-3 md:mb-4 font-suisse">{t('header.portfolio')}</h3>
+            <ul className="space-y-2 md:space-y-3">
               {footerData.portfolio.map((item) => (
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className="text-white text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
+                    className="text-white text-lg sm:text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -118,12 +118,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerData.contacts.socials.map((social) => (
                 <li key={social.label} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                  <span className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0" />
                   <a
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white font-suisse hoverable hover:text-accent-red transition-colors"
+                    className="text-white font-suisse text-sm sm:text-base hoverable hover:text-accent-red transition-colors"
                   >
                     {social.label}
                   </a>
@@ -134,10 +134,10 @@ export default function Footer() {
         </div>
 
         {/* Big Contact Button - adaptive on mobile */}
-        <div className="flex justify-center px-4 md:px-0">
+        <div className="flex justify-center px-2 md:px-0">
           <motion.a
             href="/contact"
-            className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-12 md:px-20 py-4 border border-white text-white text-lg md:text-xl font-suisse hoverable transition-all hover:bg-white hover:text-black"
+            className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-10 md:px-16 lg:px-20 py-3 md:py-4 border border-white text-white text-base md:text-lg lg:text-xl font-suisse hoverable transition-all hover:bg-white hover:text-black"
             style={{ borderRadius: '0' }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

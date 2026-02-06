@@ -39,12 +39,12 @@ export default function ProjectCard({ project, index = 0, accentBg }: ProjectCar
         </motion.div>
 
         {/* Title */}
-        <div className="mt-4">
-          <AnimatedText as="h3" className="font-suisse text-base md:text-lg text-black group-hover:text-accent-blue transition-colors" delay={0.1}>
+        <div className="mt-3 md:mt-4">
+          <AnimatedText as="h3" className="font-suisse text-sm sm:text-base md:text-lg text-black group-hover:text-accent-blue transition-colors" delay={0.1}>
             {project.title}
           </AnimatedText>
           {project.shortDescription && (
-            <AnimatedText as="p" className="text-text-secondary text-sm mt-1 line-clamp-2" delay={0.15}>
+            <AnimatedText as="p" className="text-text-secondary text-xs sm:text-sm mt-1 line-clamp-2" delay={0.15}>
               {project.shortDescription}
             </AnimatedText>
           )}

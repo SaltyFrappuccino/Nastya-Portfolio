@@ -55,12 +55,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 pt-[max(1rem,env(safe-area-inset-top))] bg-white border-b border-black/5">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-3 md:py-4 pt-[max(0.75rem,env(safe-area-inset-top))] bg-white border-b border-black/5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-suisse hoverable text-black"
+            className="inline-flex items-center justify-center px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm font-suisse hoverable text-black"
           >
             {t('header.logo')}
           </Link>
@@ -71,25 +71,25 @@ export default function Header() {
             className="flex flex-col items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] p-3 hoverable"
             aria-label="Toggle menu"
           >
-            <span className="w-7 h-0.5 transition-all bg-black" />
-            <span className="w-7 h-0.5 transition-all bg-black" />
-            <span className="w-7 h-0.5 transition-all bg-black" />
+            <span className="w-6 md:w-7 h-0.5 transition-all bg-black" />
+            <span className="w-6 md:w-7 h-0.5 transition-all bg-black" />
+            <span className="w-6 md:w-7 h-0.5 transition-all bg-black" />
           </button>
 
           {/* Right side - Language + Phone + Contact button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             <div className="text-black">
               <LanguageSwitcher />
             </div>
             <a
               href="tel:+79009994545"
-              className="font-suisse text-sm hoverable text-black"
+              className="font-suisse text-sm hoverable text-black whitespace-nowrap"
             >
               +7 900 999 45 45
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[120px] bg-black text-white hover:bg-gray-800"
+              className="inline-flex items-center justify-center px-4 xl:px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[100px] xl:min-w-[120px] bg-black text-white hover:bg-gray-800"
               style={{ borderRadius: '0' }}
             >
               {t('common.contact')}

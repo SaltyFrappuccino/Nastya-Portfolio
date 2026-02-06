@@ -40,7 +40,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
     >
-      <div className="relative w-full flex flex-col md:flex-row md:items-center gap-3 md:gap-4 py-3 md:py-4 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative w-full flex flex-col md:flex-row md:items-center gap-2 md:gap-3 lg:gap-4 py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-12">
         <motion.div 
           className="flex-1 flex flex-col group relative w-full md:w-auto"
           whileHover={{ 
@@ -58,7 +58,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
             className="hoverable min-h-[44px] flex flex-col justify-center"
           >
             <h2 
-              className="font-suisse text-lg sm:text-[4vw] md:text-[3.5vw] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-normal leading-tight relative"
+              className="font-suisse text-base sm:text-lg md:text-[3vw] lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.5rem] font-normal leading-tight relative"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -69,7 +69,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
               {isHovered && (
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 pointer-events-none"
+                  className="absolute inset-0 pointer-events-none hidden md:block"
                   style={{
                     backgroundImage: `radial-gradient(circle 160px at ${mousePos.x}% ${mousePos.y}%, #ec4899 0%, #a855f7 30%, transparent 70%)`,
                     backgroundClip: 'text',
@@ -82,7 +82,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
               )}
             </h2>
             {category.subtitle && (
-              <span className="font-suisse text-sm text-black/50 mt-2">{category.subtitle}</span>
+              <span className="font-suisse text-xs sm:text-sm text-black/50 mt-1 md:mt-2">{category.subtitle}</span>
             )}
           </Link>
         </motion.div>

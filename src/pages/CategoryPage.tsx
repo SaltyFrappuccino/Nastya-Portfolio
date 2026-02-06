@@ -55,18 +55,18 @@ export default function CategoryPage() {
   const categoryProjects = getProjectsForCategoryPage(id!);
 
   return (
-    <div className="min-h-screen bg-background-light pt-24 md:pt-32">
+    <div className="min-h-screen bg-background-light pt-20 md:pt-28 lg:pt-32">
       {/* Page title + client — как на остальных категориях */}
       <motion.header
-        className="max-w-7xl mx-auto px-4 md:px-8 mb-6"
+        className="max-w-7xl mx-auto px-4 md:px-8 mb-4 md:mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col gap-1 md:gap-2 md:flex-row md:items-start md:justify-between">
           <AnimatedText
             as="h1"
-            className="font-evolventa text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-normal text-black"
+            className="font-evolventa text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal text-black"
             delay={0.1}
           >
             {t(info.titleKey)}
@@ -74,7 +74,7 @@ export default function CategoryPage() {
           {info.client && (
             <AnimatedText
               as="span"
-              className="text-text-secondary text-sm font-suisse"
+              className="text-text-secondary text-xs sm:text-sm font-suisse"
               delay={0.2}
             >
               {info.client}
@@ -90,9 +90,9 @@ export default function CategoryPage() {
       <MarqueeStrip />
 
       {/* Projects Grid — единая сетка для всех категорий */}
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
             {categoryProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
