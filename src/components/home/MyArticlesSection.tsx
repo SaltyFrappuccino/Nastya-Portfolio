@@ -35,7 +35,7 @@ export default function MyArticlesSection() {
         >
           Мои статьи
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {articles.map((article, index) => (
             <motion.a
               key={article.href}
@@ -55,7 +55,7 @@ export default function MyArticlesSection() {
                   className="w-full h-auto object-contain"
                 />
               </div>
-              <p className="font-suisse text-sm md:text-base text-black/80">
+              <p className="font-suisse text-sm md:text-base text-black/80 underline underline-offset-4">
                 {article.title}
               </p>
             </motion.a>

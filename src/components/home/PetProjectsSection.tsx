@@ -63,37 +63,46 @@ export default function PetProjectsSection() {
           </motion.div>
         </div>
 
-        {/* 2x2 Grid of projects */}
+        {/* Slightly staggered 2x2 grid */}
         <div className="grid grid-cols-2 gap-6 md:gap-10">
-          {petProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Link
-                to={`/project/${project.id}`}
-                className="block group hoverable"
+          {petProjects.map((project, index) => {
+            const offsetClass = [
+              'md:mt-0',
+              'md:mt-8',
+              'md:mt-6',
+              'md:mt-2',
+            ][index];
+            return (
+              <motion.div
+                key={project.id}
+                className={offsetClass}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <motion.div
-                  className="overflow-hidden mb-4"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+                <Link
+                  to={`/project/${project.id}`}
+                  className="block group hoverable"
                 >
-                  <img
-                    src={project.thumbnailUrl}
-                    alt={project.title}
-                    className="w-full h-auto object-contain"
-                  />
-                </motion.div>
-                <p className="font-suisse text-sm md:text-base text-black/70 group-hover:text-black transition-colors">
-                  {project.label}
-                </p>
-              </Link>
-            </motion.div>
-          ))}
+                  <motion.div
+                    className="overflow-hidden mb-4"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={project.thumbnailUrl}
+                      alt={project.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+                  <p className="font-suisse text-sm md:text-base text-black/70 group-hover:text-black transition-colors">
+                    {project.label}
+                  </p>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
