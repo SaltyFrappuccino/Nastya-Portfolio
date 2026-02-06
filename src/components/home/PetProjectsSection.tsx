@@ -46,10 +46,10 @@ export default function PetProjectsSection() {
   ];
 
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-white">
-      <div className="max-w-[1800px] mx-auto px-4 md:px-8">
+    <section className="py-8 md:py-12 lg:py-16 bg-white">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8">
         {/* Title row: empty left + title right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-10 md:mb-20 lg:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-8 md:mb-12 lg:mb-16">
           <div className="hidden md:block" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -58,21 +58,21 @@ export default function PetProjectsSection() {
             transition={{ duration: 0.6 }}
             className="flex justify-start md:justify-end"
           >
-            <h2 className="font-suisse text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-black leading-tight text-left md:text-right">
+            <h2 className="font-suisse text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight text-left md:text-right">
               Пет&nbsp;-&nbsp;проекты,<br />хакатоны, челленджи
             </h2>
           </motion.div>
         </div>
 
         {/* Chaotic grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-12 lg:gap-x-24 xl:gap-x-32 gap-y-8 md:gap-y-16 lg:gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 md:gap-x-16 lg:gap-x-24 gap-y-12 md:gap-y-20 lg:gap-y-28">
           {petProjects.map((project, index) => {
-            // Custom offsets for chaotic look matching reference
+            // Custom offsets for chaotic look matching reference - reduced for tighter layout
             let offsetClass = '';
             if (index === 0) offsetClass = 'mt-0'; // First project (Ecology) - top left
-            if (index === 1) offsetClass = 'md:mt-32 lg:mt-48 xl:mt-64'; // Second project (iOS) - pushed way down
-            if (index === 2) offsetClass = 'md:-mt-16 lg:-mt-24 xl:-mt-32'; // Third (Green app) - pulled up
-            if (index === 3) offsetClass = 'md:mt-16 lg:mt-24 xl:mt-40'; // Fourth (Web3) - pushed down again
+            if (index === 1) offsetClass = 'md:mt-16 lg:mt-24'; // Second project (iOS) - pushed down less
+            if (index === 2) offsetClass = 'md:-mt-8 lg:-mt-12'; // Third (Green app) - pulled up less
+            if (index === 3) offsetClass = 'md:mt-8 lg:mt-16'; // Fourth (Web3) - pushed down less
 
             return (
               <motion.div
@@ -88,7 +88,7 @@ export default function PetProjectsSection() {
                   className="block group hoverable"
                 >
                   <motion.div
-                    className="overflow-hidden mb-3 md:mb-4 lg:mb-6"
+                    className="overflow-hidden mb-3 md:mb-4 max-w-[400px] mx-auto"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -98,7 +98,7 @@ export default function PetProjectsSection() {
                       className="w-full h-auto object-contain"
                     />
                   </motion.div>
-                  <p className="font-suisse text-sm md:text-base lg:text-lg text-black/70 group-hover:text-black transition-colors">
+                  <p className="font-suisse text-xs sm:text-sm md:text-base text-black/70 group-hover:text-black transition-colors max-w-[400px] mx-auto">
                     {project.label}
                   </p>
                 </Link>

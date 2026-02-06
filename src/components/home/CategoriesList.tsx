@@ -58,18 +58,18 @@ function CategoryItem({ category, index }: { category: Category; index: number }
             className="hoverable min-h-[44px] flex flex-col justify-center"
           >
             <h2 
-              className="font-suisse text-base sm:text-lg md:text-[3vw] lg:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.5rem] font-normal leading-tight relative"
+              className="font-suisse text-sm sm:text-base md:text-[2.5vw] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-normal leading-snug md:leading-snug lg:leading-snug relative"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
               {/* Black text - always visible */}
-              <span className="text-black">{title}</span>
+              <span className="text-black whitespace-pre-line block">{title}</span>
               {/* Gradient overlay - follows cursor */}
               {isHovered && (
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 pointer-events-none hidden md:block"
+                  className="absolute inset-0 pointer-events-none hidden md:block whitespace-pre-line"
                   style={{
                     backgroundImage: `radial-gradient(circle 160px at ${mousePos.x}% ${mousePos.y}%, #ec4899 0%, #a855f7 30%, transparent 70%)`,
                     backgroundClip: 'text',
