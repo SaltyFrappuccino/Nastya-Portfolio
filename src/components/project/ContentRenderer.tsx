@@ -18,7 +18,7 @@ const blockVariants = {
 function TextBlock({ content }: { content: TextContent }) {
   const isCenter = content.align === 'center';
   return (
-    <div className={`max-w-3xl px-4 md:px-8 py-3 md:py-6 lg:py-10 ${isCenter ? 'mx-auto text-center' : 'mr-auto ml-0 text-left'}`}>
+    <div className={`w-full px-4 md:px-8 py-3 md:py-6 lg:py-10 ${isCenter ? 'text-center' : 'text-left'}`}>
       {content.title && content.title.trim() && (
         <h3 className="font-suisse font-medium text-base sm:text-lg md:text-xl lg:text-2xl text-black mb-2 md:mb-3 lg:mb-4 tracking-tight">
           {content.title}

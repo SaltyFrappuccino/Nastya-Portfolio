@@ -4,7 +4,7 @@ import AnimatedText from '../ui/AnimatedText';
 
 const contacts = [
   { label: 'lorentini10@gmail.com', href: 'mailto:lorentini10@gmail.com' },
-  { label: 'Telegram', href: 'https://t.me/designanet' },
+  { label: 'Telegram', href: 'https://t.me/creator_aa' },
   { label: 'Vkontakte', href: 'https://vk.com/' },
   { label: 'Behance', href: 'https://behance.net/' },
 ];

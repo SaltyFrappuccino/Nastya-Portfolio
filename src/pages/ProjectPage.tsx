@@ -37,7 +37,7 @@ export default function ProjectPage() {
             </div>
           </div>
           {project.fullDescription && (
-            <p className="font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black mt-4 md:mt-5 lg:mt-6 max-w-3xl leading-[1.6]">
+            <p className="font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black mt-4 md:mt-5 lg:mt-6 leading-[1.6]">
               {project.fullDescription}
             </p>
           )}

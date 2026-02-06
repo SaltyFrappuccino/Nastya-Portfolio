@@ -72,17 +72,11 @@ export default function Header() {
             <span className="w-6 md:w-7 h-0.5 transition-all bg-black" />
           </button>
 
-          {/* Right side - Language + Phone + Contact button */}
+          {/* Right side - Language + Contact button */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             <div className="text-black">
               <LanguageSwitcher />
             </div>
-            <a
-              href="tel:+79009994545"
-              className="font-suisse text-sm hoverable text-black whitespace-nowrap"
-            >
-              +7 900 999 45 45
-            </a>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center px-4 xl:px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[100px] xl:min-w-[120px] bg-black text-white hover:bg-gray-800"
@@ -127,12 +121,6 @@ export default function Header() {
                 <div className="text-white">
                   <LanguageSwitcher />
                 </div>
-                <a
-                  href="tel:+79009994545"
-                  className="font-suisse text-sm text-white hoverable"
-                >
-                  +7 900 999 45 45
-                </a>
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
