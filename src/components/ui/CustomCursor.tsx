@@ -10,9 +10,11 @@ export default function CustomCursor() {
   useEffect(() => {
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseMove = () => setIsVisible(true);
 
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     // Detect hoverable elements
     const handleHoverStart = (e: MouseEvent) => {
@@ -39,6 +41,7 @@ export default function CustomCursor() {
     return () => {
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseover', handleHoverStart);
       document.removeEventListener('mouseout', handleHoverEnd);
     };

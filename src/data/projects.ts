@@ -18,10 +18,8 @@ const marketplace1 = new URL('../assets/sorted/Корпоративный мар
 const marketplace2 = new URL('../assets/sorted/Корпоративный маркетплейс 2.png', import.meta.url).href;
 const ndaImage = new URL('../assets/sorted/NDA.png', import.meta.url).href;
 
-const caratRedesign1 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 1.png', import.meta.url).href;
 const caratRedesign2 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 2.png', import.meta.url).href;
 const caratRedesign3 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 3.png', import.meta.url).href;
-const caratRedesignSite = new URL('../assets/sorted/Редизайн главной страницы сайта мебельной фабрики Carat.png', import.meta.url).href;
 const caratDarkPhone = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat.png', import.meta.url).href;
 const visitkaCarat = new URL('../assets/sorted/Визитка для раздачи салонов.png', import.meta.url).href;
 const topCategories = new URL('../assets/sorted/Топ категории диванов популярныз коллекций.png', import.meta.url).href;

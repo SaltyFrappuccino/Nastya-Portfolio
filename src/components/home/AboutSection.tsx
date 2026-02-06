@@ -1,9 +1,6 @@
-import { useTranslation } from 'react-i18next';
 import AnimatedText from '../ui/AnimatedText';
 
 export default function AboutSection() {
-  const { t } = useTranslation();
-  
   const stats = [
     { value: '50+', label: 'разработанных 💻\nсайтов и сервисов' },
     { value: '3', label: 'проекта развиваю\nдо уровня стартапа 🚀' },
