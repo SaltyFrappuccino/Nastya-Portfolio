@@ -4,6 +4,7 @@ import AboutSection from '../components/home/AboutSection';
 import CategoriesList from '../components/home/CategoriesList';
 import PhoneShowcaseSection from '../components/home/PhoneShowcaseSection';
 import PetProjectsSection from '../components/home/PetProjectsSection';
+import MyArticlesSection from '../components/home/MyArticlesSection';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <CategoriesList />
       <PhoneShowcaseSection />
       <PetProjectsSection />
+      <MyArticlesSection />
     </>
   );
 }
