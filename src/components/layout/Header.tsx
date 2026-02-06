@@ -39,10 +39,6 @@ export default function Header() {
       { label: t('menu.websitesLandings'), href: '/category/web' },
     ],
     contacts: {
-      email: 'order@cpeople.team',
-      hrText: t('header.hrText'),
-      hrEmail: 'superhero@cpeople.ru',
-      hrSite: 'hr.cpeople.ru',
       socials: [
         { label: 'Telegram', href: 'https://t.me/designanet' },
         { label: 'Vkontakte', href: 'https://vk.com/' },
@@ -204,30 +200,7 @@ export default function Header() {
 
                 {/* Contacts Column */}
                 <div>
-                  <div className="space-y-1 mb-6">
-                    <a
-                      href={`mailto:${menuItems.contacts.email}`}
-                      className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-                    >
-                      {menuItems.contacts.email}
-                    </a>
-                    <p className="text-gray-500 text-sm mt-3">{menuItems.contacts.hrText}</p>
-                    <a
-                      href={`mailto:${menuItems.contacts.hrEmail}`}
-                      className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-                    >
-                      {menuItems.contacts.hrEmail}
-                    </a>
-                    <a
-                      href={`https://${menuItems.contacts.hrSite}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-                    >
-                      {menuItems.contacts.hrSite}
-                    </a>
-                  </div>
-                  <ul className="space-y-2 mt-6">
+                  <ul className="space-y-2">
                     {menuItems.contacts.socials.map((social) => (
                       <li key={social.label} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-white rounded-full" />
