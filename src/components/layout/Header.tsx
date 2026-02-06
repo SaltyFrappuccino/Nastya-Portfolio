@@ -29,8 +29,7 @@ export default function Header() {
 
   const menuItems = {
     about: [
-      { label: t('header.cv'), href: '/cv' },
-      { label: t('header.awards'), href: '/awards' },
+      { label: t('header.cv'), href: 'https://hh.ru/resume/644da8e8ff071fb0550039ed1f367035354334', external: true },
     ],
     portfolio: [
       { label: t('menu.mobileApps'), href: '/category/mobile' },
@@ -146,13 +145,24 @@ export default function Header() {
                   <ul className="space-y-3">
                     {menuItems.about.map((item) => (
                       <li key={item.href}>
-                        <Link
-                          to={item.href}
-                          onClick={() => setIsMenuOpen(false)}
-                          className="text-white text-2xl md:text-3xl font-suisse hoverable hover:text-accent-red transition-colors"
-                        >
-                          {item.label}
-                        </Link>
+                        {item.external ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white text-2xl md:text-3xl font-suisse hoverable hover:text-accent-red transition-colors"
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link
+                            to={item.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-white text-2xl md:text-3xl font-suisse hoverable hover:text-accent-red transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>

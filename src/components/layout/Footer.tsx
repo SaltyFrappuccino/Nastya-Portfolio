@@ -41,8 +41,7 @@ export default function Footer() {
 
   const footerData = {
     about: [
-      { label: t('header.cv'), href: '/cv' },
-      { label: t('header.awards'), href: '/awards' },
+      { label: t('header.cv'), href: 'https://hh.ru/resume/644da8e8ff071fb0550039ed1f367035354334', external: true },
     ],
     portfolio: [
       { label: t('menu.mobileApps'), href: '/#mobile' },
@@ -85,12 +84,23 @@ export default function Footer() {
             <ul className="space-y-2 md:space-y-3">
               {footerData.about.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    to={item.href}
-                    className="text-white text-lg sm:text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-lg sm:text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="text-white text-lg sm:text-xl md:text-2xl font-suisse hoverable hover:text-accent-red transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

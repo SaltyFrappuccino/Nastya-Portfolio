@@ -136,6 +136,11 @@ function GalleryBlock({ content }: { content: GalleryContent }) {
               alt={image.alt}
               className="w-full h-auto"
             />
+            {image.caption && (
+              <p className="text-center text-black/80 text-xs sm:text-sm md:text-base mt-2 md:mt-3 lg:mt-4 font-suisse">
+                {image.caption}
+              </p>
+            )}
           </motion.div>
         ))}
       </div>

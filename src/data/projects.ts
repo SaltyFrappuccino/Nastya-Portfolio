@@ -151,27 +151,18 @@ export const projects: Project[] = [
         type: 'gallery',
         content: {
           images: [
-            { src: microservices2, alt: 'Интерфейс заявки с возможностью вызова помощника' },
-            { src: microservices3, alt: 'Чат с ассистентом и быстрые подсказки' },
+            { 
+              src: microservices2, 
+              alt: 'Интерфейс заявки с возможностью вызова помощника',
+              caption: 'Интерфейс заявки с возможностью вызова помощника'
+            },
+            { 
+              src: microservices3, 
+              alt: 'Чат с ассистентом и быстрые подсказки',
+              caption: 'Чат с ассистентом и быстрые подсказки'
+            },
           ],
           columns: 2,
-        },
-      },
-      {
-        type: 'two-columns',
-        content: {
-          left: {
-            type: 'text',
-            content: {
-              text: 'Интерфейс заявки с возможностью вызова помощника',
-            },
-          },
-          right: {
-            type: 'text',
-            content: {
-              text: 'Чат с ассистентом и быстрые подсказки',
-            },
-          },
         },
       },
       {
@@ -194,21 +185,10 @@ export const projects: Project[] = [
         },
       },
       {
-        type: 'two-columns',
+        type: 'text',
         content: {
-          left: {
-            type: 'text',
-            content: {
-              text: '',
-            },
-          },
-          right: {
-            type: 'text',
-            content: {
-              text: 'Процент одобрения заявки цифровым помощником, который помогает андеррайтеру принять решение',
-              align: 'center',
-            },
-          },
+          text: 'Процент одобрения заявки цифровым помощником, который помогает андеррайтеру принять решение',
+          align: 'center',
         },
       },
     ],
