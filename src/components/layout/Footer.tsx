@@ -8,8 +8,10 @@ const fintechFooter = new URL('../../assets/sorted/Дизайн в Fintech foote
 const mobileFooter = new URL('../../assets/sorted/Мобильные приложения footer.png', import.meta.url).href;
 const webFooter = new URL('../../assets/sorted/Веб сайты, лендинги и сервисы footer.png', import.meta.url).href;
 const identityFooter = new URL('../../assets/sorted/Айдентика и digital - материалы footer.png', import.meta.url).href;
+const homeFooter = new URL('../../assets/sorted/landing/Футер главной страницы.png', import.meta.url).href;
 
 function getCategoryFooterSrc(pathname: string, projectCategory?: string): string | null {
+  if (pathname === '/') return homeFooter;
   if (pathname.startsWith('/category/')) {
     const id = pathname.replace('/category/', '');
     if (id === 'fintech') return fintechFooter;
@@ -24,8 +26,7 @@ function getCategoryFooterSrc(pathname: string, projectCategory?: string): strin
     if (projectCategory === 'Web') return webFooter;
     if (projectCategory === 'Identity') return identityFooter;
   }
-  if (pathname === '/') return mobileFooter;
-  return mobileFooter;
+  return null;
 }
 
 export default function Footer() {
@@ -33,7 +34,10 @@ export default function Footer() {
   const location = useLocation();
   const { id: projectId } = useParams<{ id: string }>();
   const project = projectId ? getProjectById(projectId) : undefined;
-  const categoryFooterSrc = getCategoryFooterSrc(location.pathname, project?.category);
+  
+  // Hide category footer image on project pages, but show on home and category pages
+  const isProjectPage = location.pathname.startsWith('/project/');
+  const categoryFooterSrc = !isProjectPage ? getCategoryFooterSrc(location.pathname, project?.category) : null;
 
   const footerData = {
     about: [
@@ -47,15 +51,12 @@ export default function Footer() {
       { label: t('menu.websitesLandings'), href: '/#web' },
     ],
     contacts: {
-      email: 'order@cpeople.team',
-      hrEmail: 'superhero@cpeople.ru',
-      hrSite: 'hr.cpeople.ru',
       socials: [
-        { label: 'Telegram', href: 'https://t.me/' },
+        { label: 'Telegram', href: 'https://t.me/designanet' },
         { label: 'Vkontakte', href: 'https://vk.com/' },
         { label: 'Behance', href: 'https://behance.net/' },
         { label: 'VC.RU', href: 'https://vc.ru/' },
-        { label: 'Хабр', href: 'https://habr.com/' },
+        { label: 'Хабр', href: 'https://habr.com/ru/users/AnaDubrovina/articles/' },
       ],
     },
   };
@@ -114,29 +115,6 @@ export default function Footer() {
 
           {/* Contacts Column */}
           <div>
-            <div className="space-y-2 mb-6">
-              <a
-                href={`mailto:${footerData.contacts.email}`}
-                className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-              >
-                {footerData.contacts.email}
-              </a>
-              <p className="text-gray-500 text-sm">{t('header.hrText')}</p>
-              <a
-                href={`mailto:${footerData.contacts.hrEmail}`}
-                className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-              >
-                {footerData.contacts.hrEmail}
-              </a>
-              <a
-                href={`https://${footerData.contacts.hrSite}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-white text-base font-suisse hoverable hover:text-accent-red transition-colors"
-              >
-                {footerData.contacts.hrSite}
-              </a>
-            </div>
             <ul className="space-y-2">
               {footerData.contacts.socials.map((social) => (
                 <li key={social.label} className="flex items-center gap-2">

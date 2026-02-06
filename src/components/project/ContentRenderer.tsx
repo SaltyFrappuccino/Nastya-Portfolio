@@ -59,14 +59,14 @@ function ImageBlock({ content }: { content: ImageContent }) {
 function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
   return (
     <motion.div
-      className="max-w-5xl mx-auto px-4 md:px-8 py-4 md:py-10"
+      className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-10"
       variants={blockVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
+        <div className="flex flex-col justify-center h-full">
           {content.left.type === 'text' ? (
             <>
               {(content.left.content as TextContent).title && (
@@ -74,7 +74,7 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
                   {(content.left.content as TextContent).title}
                 </h3>
               )}
-              <p className="font-suisse text-lg md:text-xl text-black leading-[1.6]">
+              <p className={`font-suisse text-lg md:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.left.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
                 {(content.left.content as TextContent).text}
               </p>
             </>
@@ -82,11 +82,11 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
             <img
               src={(content.left.content as ImageContent).src}
               alt={(content.left.content as ImageContent).alt}
-              className="w-full h-auto"
+              className="max-w-full h-auto mx-auto"
             />
           )}
         </div>
-        <div>
+        <div className="flex flex-col justify-center h-full">
           {content.right.type === 'text' ? (
             <>
               {(content.right.content as TextContent).title && (
@@ -94,7 +94,7 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
                   {(content.right.content as TextContent).title}
                 </h3>
               )}
-              <p className="font-suisse text-lg md:text-xl text-black leading-[1.6]">
+              <p className={`font-suisse text-lg md:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.right.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
                 {(content.right.content as TextContent).text}
               </p>
             </>
@@ -102,7 +102,7 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
             <img
               src={(content.right.content as ImageContent).src}
               alt={(content.right.content as ImageContent).alt}
-              className="w-full h-auto"
+              className="max-w-full h-auto mx-auto"
             />
           )}
         </div>

@@ -18,6 +18,9 @@ export default function Layout({ children }: LayoutProps) {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Hide footer for specific project pages
+  const hideFooter = false;
+
   return (
     <div className="min-h-screen bg-background-light">
       <CustomCursor />
@@ -35,7 +38,7 @@ export default function Layout({ children }: LayoutProps) {
         </motion.main>
       </AnimatePresence>
 
-      <Footer />
+      {!hideFooter && <Footer />}
       <ScrollToTop />
     </div>
   );

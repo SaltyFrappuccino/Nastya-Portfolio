@@ -21,8 +21,10 @@ const ndaImage = new URL('../assets/sorted/NDA.png', import.meta.url).href;
 const caratRedesign1 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 1.png', import.meta.url).href;
 const caratRedesign2 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 2.png', import.meta.url).href;
 const caratRedesign3 = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat 3.png', import.meta.url).href;
-const llmAssistantCarat = new URL('../assets/sorted/LLM-ассистент вопросы, подсказки и навигация Carat.png', import.meta.url).href;
-const recommendationsCarat = new URL('../assets/sorted/Рекомендации ИИ оценивает риск по состоянию дерева. Выдаёт конкретное действие — обрезка, подпорка или вызов специалиста Carat.png', import.meta.url).href;
+const caratRedesignSite = new URL('../assets/sorted/Редизайн главной страницы сайта мебельной фабрики Carat.png', import.meta.url).href;
+const caratDarkPhone = new URL('../assets/sorted/Редизайн главной страницы мебельной фабрики Carat.png', import.meta.url).href;
+const visitkaCarat = new URL('../assets/sorted/Визитка для раздачи салонов.png', import.meta.url).href;
+const topCategories = new URL('../assets/sorted/Топ категории диванов популярныз коллекций.png', import.meta.url).href;
 
 const pandaGifts1 = new URL('../assets/sorted/Точечные лендинги под ЦА для PandaGifts 1.png', import.meta.url).href;
 const pandaGifts2 = new URL('../assets/sorted/Точечные лендинги под ЦА для PandaGifts 2.png', import.meta.url).href;
@@ -45,6 +47,11 @@ const iosChallenge = new URL('../assets/sorted/iOS Challenge.png', import.meta.u
 const web3Image = new URL('../assets/sorted/Web3.png', import.meta.url).href;
 const blank = new URL('../assets/sorted/blank.png', import.meta.url).href;
 const underwriterImage = new URL('../assets/sorted/Цифровой помощник  для андеррайтеров в зеленом финтехе.png', import.meta.url).href;
+const microservices1 = new URL('../assets/sorted/Микросервисы Цифровой помощник в кредитном процессе для СБЕРа 1.png', import.meta.url).href;
+const microservices2 = new URL('../assets/sorted/Микросервисы Цифровой помощник в кредитном процессе для СБЕРа 2.png', import.meta.url).href;
+const microservices3 = new URL('../assets/sorted/Микросервисы Цифровой помощник в кредитном процессе для СБЕРа 3.png', import.meta.url).href;
+const microservices4 = new URL('../assets/sorted/Микросервисы Цифровой помощник в кредитном процессе для СБЕРа 4.png', import.meta.url).href;
+const microservices5 = new URL('../assets/sorted/Микросервисы Цифровой помощник в кредитном процессе для СБЕРа 5.png', import.meta.url).href;
 
 export const projects: Project[] = [
   // Fintech
@@ -133,27 +140,77 @@ export const projects: Project[] = [
     year: '2024',
     role: 'Product Designer',
     fullDescription: 'Задача: интегрировать цифрового помощника в процесс обработки кредитных заявок, попавших на ручное рассмотрение, и оптимизировать процесс, сократив время обработки одной заявки.',
-    coverImage: underwriterImage,
+    coverImage: microservices1,
     content: [
-      {
-        type: 'image',
-        content: {
-          src: underwriterImage,
-          alt: 'Цифровой помощник в кредитном процессе для СБЕРА',
-        },
-      },
       {
         type: 'text',
         content: {
           text: 'Мы с командой разработали минимальный жизнеспособный вариант веб-приложения, сфокусированный на backend-части (разработка микросервисов, обеспечивающих получение, обработку и хранение информации по заявке, взаимодействие с ассистентом) и frontend (создание пользовательского интерфейса для визуализации и ввода информации). Мы добавили новые навыки для цифрового ассистента из семейства Салют, что позволило создать полноценный рабочий инструмент под задачу андеррайтера.',
+          align: 'left',
         },
       },
       {
-        type: 'stats',
+        type: 'gallery',
         content: {
-          items: [
-            { value: '70%', label: 'Процент одобрения заявки цифровым помощником, который помогает андеррайтеру принять решение' },
+          images: [
+            { src: microservices2, alt: 'Интерфейс заявки с возможностью вызова помощника' },
+            { src: microservices3, alt: 'Чат с ассистентом и быстрые подсказки' },
           ],
+          columns: 2,
+        },
+      },
+      {
+        type: 'two-columns',
+        content: {
+          left: {
+            type: 'text',
+            content: {
+              text: 'Интерфейс заявки с возможностью вызова помощника',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: 'Чат с ассистентом и быстрые подсказки',
+            },
+          },
+        },
+      },
+      {
+        type: 'two-columns',
+        content: {
+          left: {
+            type: 'image',
+            content: {
+              src: microservices4,
+              alt: 'Пакет документов',
+            },
+          },
+          right: {
+            type: 'image',
+            content: {
+              src: microservices5,
+              alt: 'Процент одобрения заявки цифровым помощником',
+            },
+          },
+        },
+      },
+      {
+        type: 'two-columns',
+        content: {
+          left: {
+            type: 'text',
+            content: {
+              text: '',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: 'Процент одобрения заявки цифровым помощником, который помогает андеррайтеру принять решение',
+              align: 'center',
+            },
+          },
         },
       },
     ],
@@ -442,18 +499,18 @@ export const projects: Project[] = [
     id: 'carat-furniture',
     title: 'Редизайн главной страницы мебельной фабрики Carat',
     category: 'Web',
-    thumbnailUrl: caratRedesign1,
+    thumbnailUrl: caratDarkPhone,
     shortDescription: 'Редизайн главной страницы с акцентом на навигацию, каталог, коллекции и визуальную привлекательность мебельного бренда Carat.',
     client: '@creator_aa',
     year: '2024',
     role: 'Product Designer',
     fullDescription: 'Редизайн главной страницы сайта мебельной фабрики Carat с акцентом на навигацию, каталог, коллекции и визуальную привлекательность бренда. CARAT — мебель для жизни.',
-    coverImage: caratRedesign1,
+    coverImage: caratDarkPhone,
     content: [
       {
         type: 'text',
         content: {
-          text: 'Навигация: О компании (История, Качество, Вакансии, Контакты), Каталог, Коллекции, 3D-конфигуратор, Где купить, Информация. Понятная структура и акцент на визуальную привлекательность бренда.',
+          text: 'Я предоставила идеи по улучшению всего сайта, но заказчик решил сделать редизайн только главной страницы. Проработала меню - бургер, добавила живые фото с кейсами и объяснила заказчику, почему и как сделать лучше, показав референсы сайтов крупных мебельных компаний. Предложила варианты, как улучшить конверсию и объяснила, зачем компании хороший сайт - визитка.',
           align: 'left',
         },
       },
@@ -461,27 +518,13 @@ export const projects: Project[] = [
         type: 'image',
         content: {
           src: caratRedesign2,
-          alt: 'Carat — герой-блок с интерьером, CARAT - МЕБЕЛЬ ДЛЯ ЖИЗНИ',
+          alt: 'Carat — интерьер',
         },
       },
       {
         type: 'text',
         content: {
-          text: 'CARAT — мебель для жизни. Герой-блок с интерьером и слоганом: визуальная подача ценностей бренда и атмосфера дома.',
-          align: 'left',
-        },
-      },
-      {
-        type: 'image',
-        content: {
-          src: caratRedesign3,
-          alt: 'Carat — блок «Любимые коллекции». В соответствии с вашим образом жизни.',
-        },
-      },
-      {
-        type: 'text',
-        content: {
-          text: 'Блок «Любимые коллекции»: в соответствии с вашим образом жизни. Сетка коллекций с акцентом на формы, стиль и суть работы фабрики.',
+          text: 'Дополнительно проработали TOV на главном баннере',
           align: 'left',
         },
       },
@@ -489,89 +532,92 @@ export const projects: Project[] = [
         type: 'gallery',
         content: {
           images: [
-            { src: llmAssistantCarat, alt: 'LLM-ассистент: вопросы, подсказки и навигация' },
-            { src: recommendationsCarat, alt: 'Рекомендации: ИИ оценивает риск по состоянию дерева. Выдаёт конкретное действие — обрезка, подпорка или вызов специалиста' },
+            { src: visitkaCarat, alt: 'Визитка - раздатка для салонов' },
+            { src: topCategories, alt: 'Топ категории диванов из популярных коллекций' },
           ],
           columns: 2,
         },
       },
       {
-        type: 'text',
+        type: 'two-columns',
         content: {
-          text: 'LLM-ассистент: вопросы, подсказки и навигация. Рекомендации ИИ: оценка риска по состоянию дерева и конкретные действия — обрезка, подпорка или вызов специалиста.',
-          align: 'left',
+          left: {
+            type: 'text',
+            content: {
+              text: 'Визитка - раздатка для салонов',
+              align: 'center',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: 'Топ категории диванов из популярных коллекций',
+              align: 'center',
+            },
+          },
+        },
+      },
+      {
+        type: 'image',
+        content: {
+          src: caratRedesign3,
+          alt: 'Было / Стало',
         },
       },
     ],
   },
   {
     id: 'panda-gifts',
-    title: 'Точечные лендинги под ЦА для PandaGifts',
+    title: 'Точечные лендинги под ЦА для компании',
     category: 'Web',
     thumbnailUrl: pandaGifts1,
     shortDescription: 'В паре с маркетологом адаптировали активы и ценности компании под нужную ЦА: маркетологов, HR, лидов и директоров',
     client: '@creator_aa',
     year: '2024',
     role: 'Product Designer',
-    fullDescription: 'В паре с маркетологом адаптировали активы и ценности компании под нужную ЦА: маркетологов, HR, лидов и директоров. Оформили крупных 8 кейсов, подобрали графические материалы (отсняли контент, создали иконки, подобрали цвета).',
+    fullDescription: 'В паре с маркетологом адаптировали активы и ценности компании под нужную ЦА: маркетологов, HR, лидов и директоров. Оформили крупных 8 кейсов, подобрали графические материалы (отсняли контент, отрисовали иконки, подобрали цвета).',
     coverImage: pandaGifts1,
     content: [
       {
-        type: 'text',
+        type: 'two-columns',
         content: {
-          text: 'В паре с маркетологом адаптировали активы и ценности компании под нужную ЦА: маркетологов, HR, лидов и директоров. Оформили крупных 8 кейсов, подобрали графические материалы (отсняли контент, создали иконки, подобрали цвета).',
-          align: 'center',
-        },
-      },
-      {
-        type: 'image',
-        content: {
-          src: pandaGifts1,
-          alt: 'Лендинг PandaGifts — промопродукция, корпоративные подарки, корпоративный мерч. Умеем и любим работать с крупными брендами',
-        },
-      },
-      {
-        type: 'text',
-        content: {
-          title: 'Что добавили на лендинг',
-          text: '— Ценности компании\n— Виды услуг с кратким описанием\n— Позиционирование\n— Кейсы в портфолио\n— Отличия от конкурентов',
-          align: 'left',
+          left: {
+            type: 'text',
+            content: {
+              title: 'Что добавили на лендинг',
+              text: '',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: '— Ценности компании\n— Виды услуг с кратким описанием\n— Позиционирование\n— Кейсы в портфолио\n— Отличия от конкурентов',
+            },
+          },
         },
       },
       {
         type: 'image',
         content: {
           src: pandaGifts2,
-          alt: 'Коллаж кейсов: ACT, MR group, Mobile, оперативность, шоурум. Умеем создавать дизайн на уровне искусства',
+          alt: 'Коллаж кейсов',
         },
       },
       {
-        type: 'text',
+        type: 'two-columns',
         content: {
-          text: '>10 сайтов брендинговых агенств и сувенирных компаний проанализировала и выделила наиболее важные блоки. Умеем создавать дизайн на уровне искусства.',
-          align: 'center',
-        },
-      },
-      {
-        type: 'text',
-        content: {
-          text: 'Наши ценности: клиентоцентричность, безопасность, эмпатия, эффективность. Предложила разработать свой стиль, опираясь на тренды. Определила шрифтовую пару и палитру цветов, а также создала иконки и иллюстрации (ИИ + Figma). Шоурум — прямой контакт с товарами важен; приглашаем в шоурум за мерчем, подарками, промо и велком-паками.',
-          align: 'left',
-        },
-      },
-      {
-        type: 'text',
-        content: {
-          title: 'Кейс Сбербанк',
-          text: ' ',
-          align: 'left',
-        },
-      },
-      {
-        type: 'image',
-        content: {
-          src: pandaGifts3,
-          alt: 'Кейс Сбербанк — лендинг: что у нас есть, нас выбирают',
+          left: {
+            type: 'text',
+            content: {
+              text: '>10 сайтов брендинговых агенств и сувенирных компаний проанализировала и выделила наиболее важные блоки',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: 'Предложила разработать свой стиль, опираясь на тренды. Определила шрифтовую пару и палитру цветов, а также создала иконки и иллюстрации (ИИ + Figma)',
+            },
+          },
         },
       },
       {
@@ -585,11 +631,29 @@ export const projects: Project[] = [
         },
       },
       {
-        type: 'text',
+        type: 'two-columns',
         content: {
-          title: 'Эмпатия',
-          text: 'Помогаем клиенту на всем пути',
-          align: 'left',
+          left: {
+            type: 'text',
+            content: {
+              text: 'Акцент на контент в блоке кейсов',
+              align: 'center',
+            },
+          },
+          right: {
+            type: 'text',
+            content: {
+              text: 'Добавила цветовые акценты на блоки с важной информацией',
+              align: 'center',
+            },
+          },
+        },
+      },
+      {
+        type: 'image',
+        content: {
+          src: pandaGifts3,
+          alt: 'Эмпатия и иконки',
         },
       },
     ],

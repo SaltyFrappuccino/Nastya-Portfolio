@@ -4,15 +4,15 @@ import AnimatedText from '../ui/AnimatedText';
 
 const contacts = [
   { label: 'lorentini10@gmail.com', href: 'mailto:lorentini10@gmail.com' },
-  { label: 'Telegram', href: 'https://t.me/' },
+  { label: 'Telegram', href: 'https://t.me/designanet' },
   { label: 'Vkontakte', href: 'https://vk.com/' },
   { label: 'Behance', href: 'https://behance.net/' },
 ];
 
 const publications = [
-  { label: 'Telegram', href: 'https://t.me/' },
+  { label: 'Telegram', href: 'https://t.me/designanet' },
   { label: 'VC.RU', href: 'https://vc.ru/' },
-  { label: 'Хабр', href: 'https://habr.com/' },
+  { label: 'Хабр', href: 'https://habr.com/ru/users/AnaDubrovina/articles/' },
 ];
 
 const containerVariants = {

@@ -8,12 +8,15 @@ const fintechPreview = new URL('../../assets/sorted/landing/Дизайн в Fint
 const mobilePreview = new URL('../../assets/sorted/landing/Мобильные приложения.png', import.meta.url).href;
 const webPreview = new URL('../../assets/sorted/landing/Веб сайты и лендинги.png', import.meta.url).href;
 const identityPreview = new URL('../../assets/sorted/landing/Digital материалы - Посты - Айдентика.png', import.meta.url).href;
+const mobileGamesPreview = new URL('../../assets/sorted/landing/Мобильные  игры и концепты.png', import.meta.url).href;
 
 interface Category {
   id: string;
   titleKey: string;
+  titleOverride?: string;
   previewImage: string;
   href: string;
+  subtitle?: string;
 }
 
 function CategoryItem({ category, index }: { category: Category; index: number }) {
@@ -28,7 +31,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
     setMousePos({ x, y });
   };
 
-  const title = t(category.titleKey);
+  const title = category.titleOverride || t(category.titleKey);
 
   return (
     <motion.div
@@ -39,7 +42,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
     >
       <div className="relative w-full flex flex-col md:flex-row md:items-center gap-3 md:gap-4 py-3 md:py-4 px-4 sm:px-6 md:px-8 lg:px-12">
         <motion.div 
-          className="flex-1 flex items-center group relative w-full md:w-auto"
+          className="flex-1 flex flex-col group relative w-full md:w-auto"
           whileHover={{ 
             x: 15, 
             scale: 1.05,
@@ -52,7 +55,7 @@ function CategoryItem({ category, index }: { category: Category; index: number }
         >
           <Link
             to={category.href}
-            className="hoverable min-h-[44px] flex items-center"
+            className="hoverable min-h-[44px] flex flex-col justify-center"
           >
             <h2 
               className="font-suisse text-lg sm:text-[4vw] md:text-[3.5vw] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-normal leading-tight relative"
@@ -78,6 +81,9 @@ function CategoryItem({ category, index }: { category: Category; index: number }
                 </span>
               )}
             </h2>
+            {category.subtitle && (
+              <span className="font-suisse text-sm text-black/50 mt-2">{category.subtitle}</span>
+            )}
           </Link>
         </motion.div>
         
@@ -128,8 +134,17 @@ export default function CategoriesList() {
     {
       id: 'identity',
       titleKey: 'categories.identity',
+      titleOverride: 'Digital материалы\n→ Посты → Айдентика',
       previewImage: identityPreview,
       href: '/category/identity',
+    },
+    {
+      id: 'mobile-games',
+      titleKey: 'categories.mobileGames',
+      titleOverride: 'Мобильные  игры\nи концепты',
+      previewImage: mobileGamesPreview,
+      href: '#',
+      subtitle: 'Скоро',
     },
   ];
 

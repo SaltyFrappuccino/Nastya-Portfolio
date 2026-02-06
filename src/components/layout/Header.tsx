@@ -44,11 +44,11 @@ export default function Header() {
       hrEmail: 'superhero@cpeople.ru',
       hrSite: 'hr.cpeople.ru',
       socials: [
-        { label: 'Telegram', href: 'https://t.me/' },
+        { label: 'Telegram', href: 'https://t.me/designanet' },
         { label: 'Vkontakte', href: 'https://vk.com/' },
         { label: 'Behance', href: 'https://behance.net/' },
         { label: 'VC.RU', href: 'https://vc.ru/' },
-        { label: 'Хабр', href: 'https://habr.com/' },
+        { label: 'Хабр', href: 'https://habr.com/ru/users/AnaDubrovina/articles/' },
       ],
     },
   };
