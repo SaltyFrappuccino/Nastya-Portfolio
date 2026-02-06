@@ -52,7 +52,7 @@ export default function Footer() {
     ],
     contacts: {
       socials: [
-        { label: 'Telegram', href: 'https://t.me/designanet' },
+        { label: 'Telegram', href: 'https://t.me/creator_aa' },
         { label: 'Vkontakte', href: 'https://vk.com/' },
         { label: 'Behance', href: 'https://behance.net/' },
         { label: 'VC.RU', href: 'https://vc.ru/' },
