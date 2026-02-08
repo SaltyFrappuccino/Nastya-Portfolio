@@ -15,6 +15,21 @@ const blockVariants = {
   },
 };
 
+function renderTextWithBold(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={index} className="font-semibold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+
+    return <span key={index}>{part}</span>;
+  });
+}
+
 function TextBlock({ content }: { content: TextContent }) {
   const isCenter = content.align === 'center';
   return (
@@ -26,7 +41,7 @@ function TextBlock({ content }: { content: TextContent }) {
       )}
       {content.text.trim() && (
         <p className="font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.6] whitespace-pre-line">
-          {content.text}
+          {renderTextWithBold(content.text)}
         </p>
       )}
     </div>
@@ -74,9 +89,11 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
                   {(content.left.content as TextContent).title}
                 </h3>
               )}
-              <p className={`font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.left.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
-                {(content.left.content as TextContent).text}
-              </p>
+              {(content.left.content as TextContent).text?.trim() && (
+                <p className={`font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.left.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
+                  {renderTextWithBold((content.left.content as TextContent).text)}
+                </p>
+              )}
             </>
           ) : (
             <img
@@ -94,9 +111,11 @@ function TwoColumnsBlock({ content }: { content: TwoColumnsContent }) {
                   {(content.right.content as TextContent).title}
                 </h3>
               )}
-              <p className={`font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.right.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
-                {(content.right.content as TextContent).text}
-              </p>
+              {(content.right.content as TextContent).text?.trim() && (
+                <p className={`font-suisse text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.6] whitespace-pre-line ${(content.right.content as TextContent).align === 'center' ? 'text-center' : 'text-left'}`}>
+                  {renderTextWithBold((content.right.content as TextContent).text)}
+                </p>
+              )}
             </>
           ) : (
             <img
