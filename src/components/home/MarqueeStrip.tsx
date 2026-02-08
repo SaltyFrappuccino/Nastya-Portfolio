@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const marqueeText = '/UI design UX Searches VR/ ';
+const marqueeText = '/UI design UX Searches VR/';
 
 export default function MarqueeStrip() {
   return (
@@ -21,7 +21,7 @@ export default function MarqueeStrip() {
           {[...Array(6)].map((_, i) => (
             <span
               key={i}
-              className="text-black font-evolventa text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mx-4 md:mx-6"
+              className="text-black font-evolventa text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight"
             >
               {marqueeText}
             </span>
