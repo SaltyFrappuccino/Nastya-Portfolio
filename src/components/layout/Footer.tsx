@@ -146,7 +146,7 @@ export default function Footer() {
         {/* Big Contact Button - adaptive on mobile */}
         <div className="flex justify-center px-2 md:px-0">
           <motion.a
-            href="/contact"
+            href="mailto:lorentini10@gmail.com"
             className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-10 md:px-16 lg:px-20 py-3 md:py-4 border border-white text-white text-base md:text-lg lg:text-xl font-suisse hoverable transition-all hover:bg-white hover:text-black"
             style={{ borderRadius: '0' }}
             whileHover={{ scale: 1.02 }}

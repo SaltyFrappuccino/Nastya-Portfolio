@@ -76,13 +76,13 @@ export default function Header() {
             <div className="text-black">
               <LanguageSwitcher />
             </div>
-            <Link
-              to="/contact"
+            <a
+              href="mailto:lorentini10@gmail.com"
               className="inline-flex items-center justify-center px-4 xl:px-6 py-2.5 text-sm font-suisse hoverable transition-colors min-w-[100px] xl:min-w-[120px] bg-black text-white hover:bg-gray-800"
               style={{ borderRadius: '0' }}
             >
               {t('common.contact')}
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -120,14 +120,13 @@ export default function Header() {
                 <div className="text-white">
                   <LanguageSwitcher />
                 </div>
-                <Link
-                  to="/contact"
-                  onClick={() => setIsMenuOpen(false)}
+                <a
+                  href="mailto:lorentini10@gmail.com"
                   className="inline-flex items-center justify-center px-6 py-2.5 bg-white text-black text-sm font-suisse hoverable min-w-[120px]"
                   style={{ borderRadius: '0' }}
                 >
                   {t('common.contact')}
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -218,14 +217,13 @@ export default function Header() {
 
               {/* Big Contact Button - adaptive width on mobile */}
               <div className="mt-16 md:mt-24 flex justify-center px-4 md:px-0">
-                <Link
-                  to="/contact"
-                  onClick={() => setIsMenuOpen(false)}
+                <a
+                  href="mailto:lorentini10@gmail.com"
                   className="inline-flex items-center justify-center w-full max-w-[280px] px-6 sm:px-12 md:px-20 py-4 border border-white text-white text-lg md:text-xl font-suisse hoverable hover:bg-white hover:text-black transition-all"
                   style={{ borderRadius: '0' }}
                 >
                   {t('common.contact')}
-                </Link>
+                </a>
               </div>
             </motion.div>
           </motion.div>

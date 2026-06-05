@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { X } from 'lucide-react';
 
 const musicImage = new URL('../assets/sorted/landing/Моя волна ЯМузыка.png', import.meta.url).href;
 const footerImage = new URL('../assets/sorted/landing/Футер главной страницы.png', import.meta.url).href;
@@ -107,31 +110,145 @@ const archivedProjects: Project[] = [
 const archiveYears = ['2025', '2024', '2023'];
 
 function HomeHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const catalogLinks = [
+    { label: 'Мобильные приложения', href: '/category/mobile' },
+    { label: 'Digital дизайн', href: '/category/identity' },
+    { label: 'Fintech проекты', href: '/category/fintech' },
+    { label: 'Веб сайты, лендинги и сервисы', href: '/category/web' },
+  ];
+
+  const socialLinks = [
+    { label: 'Telegram', href: 'https://t.me/creator_aa' },
+    { label: 'Vkontakte', href: 'https://vk.com/' },
+    { label: 'Behance', href: 'https://behance.net/' },
+    { label: 'VC.RU', href: 'https://vc.ru/' },
+    { label: 'Хабр', href: 'https://habr.com/ru/users/AnaDubrovina/articles/' },
+  ];
+
   return (
-    <header className="mx-auto flex w-full max-w-[1320px] items-start justify-between px-5 pt-7 md:px-8 lg:px-0">
-      <Link to="/" className="font-suisse text-[18px] leading-none text-black hoverable md:text-[20px]">
-        @creator_aa
-      </Link>
+    <>
+      <header className="mx-auto flex w-full max-w-[1320px] items-start justify-between px-5 pt-7 md:px-8 lg:px-0">
+        <Link to="/" className="font-suisse text-[18px] leading-none text-black hoverable md:text-[20px]">
+          @creator_aa
+        </Link>
 
-      <button
-        className="flex h-10 w-10 items-center justify-center hoverable lg:mr-auto lg:ml-[340px]"
-        aria-label="Открыть меню"
-      >
-        <span className="block h-[2px] w-6 bg-black shadow-[0_7px_0_#000,0_14px_0_#000]" />
-      </button>
-
-      <nav className="hidden items-start gap-20 text-[14px] leading-[1.15] text-black lg:flex">
-        <a href="tel:+79009994545" className="hoverable">
-          +7 900 999 45 45
-        </a>
-        <a
-          href="mailto:lorentini10@gmail.com"
-          className="bg-black px-7 py-3 text-white hoverable"
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(true)}
+          className="flex h-10 w-10 items-center justify-center hoverable lg:mr-auto lg:ml-[340px]"
+          aria-label="Открыть меню"
+          aria-expanded={isMenuOpen}
         >
-          Связаться
-        </a>
-      </nav>
-    </header>
+          <span className="block h-[2px] w-6 bg-black shadow-[0_7px_0_#000,0_14px_0_#000]" />
+        </button>
+
+        <nav className="hidden items-start gap-20 text-[14px] leading-[1.15] text-black lg:flex">
+          <a href="tel:+79009994545" className="hoverable">
+            +7 900 999 45 45
+          </a>
+          <a
+            href="mailto:lorentini10@gmail.com"
+            className="bg-black px-7 py-3 text-white hoverable"
+          >
+            Связаться
+          </a>
+        </nav>
+      </header>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] bg-background-dark text-white"
+          >
+            <div className="flex items-center justify-between px-5 py-5 md:px-8">
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="font-suisse text-[18px] leading-none hoverable md:text-[20px]"
+              >
+                @creator_aa
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center hoverable"
+                aria-label="Закрыть меню"
+              >
+                <X className="h-8 w-8" strokeWidth={1.5} />
+              </button>
+
+              <a
+                href="mailto:lorentini10@gmail.com"
+                className="hidden bg-white px-7 py-3 font-suisse text-[14px] text-black hoverable md:inline-flex"
+              >
+                Связаться
+              </a>
+            </div>
+
+            <motion.div
+              initial={{ y: 18, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.08, duration: 0.3 }}
+              className="grid gap-12 px-6 py-10 md:grid-cols-3 md:px-16 md:py-16"
+            >
+              <div>
+                <p className="mb-5 font-suisse text-sm text-white/45">обо мне</p>
+                <a
+                  href="https://hh.ru/resume/644da8e8ff071fb0550039ed1f367035354334"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-suisse text-3xl transition-colors hover:text-accent-red hoverable"
+                >
+                  Резюме
+                </a>
+              </div>
+
+              <div>
+                <p className="mb-5 font-suisse text-sm text-white/45">портфолио</p>
+                <ul className="space-y-4">
+                  {catalogLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        to={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="font-suisse text-2xl transition-colors hover:text-accent-red hoverable md:text-3xl"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="mb-5 font-suisse text-sm text-white/45">контакты</p>
+                <ul className="space-y-3">
+                  {socialLinks.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-suisse text-xl transition-colors hover:text-accent-red hoverable"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
