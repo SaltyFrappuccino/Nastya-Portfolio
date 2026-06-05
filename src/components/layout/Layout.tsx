@@ -18,13 +18,12 @@ export default function Layout({ children }: LayoutProps) {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Hide footer for specific project pages
-  const hideFooter = false;
+  const isHomePage = location.pathname === '/';
 
   return (
     <div className="min-h-screen bg-background-light">
       <CustomCursor />
-      <Header />
+      {!isHomePage && <Header />}
       
       <AnimatePresence mode="wait">
         <motion.main
@@ -38,9 +37,8 @@ export default function Layout({ children }: LayoutProps) {
         </motion.main>
       </AnimatePresence>
 
-      {!hideFooter && <Footer />}
+      {!isHomePage && <Footer />}
       <ScrollToTop />
     </div>
   );
 }
-
