@@ -337,7 +337,7 @@ function ProjectRow({ project }: { project: Project }) {
   );
 
   return (
-    <article className="grid grid-cols-[minmax(118px,148px)_minmax(0,1fr)] gap-4 sm:grid-cols-[minmax(104px,220px)_1fr] sm:gap-5 md:grid-cols-[220px_1fr] md:gap-10 lg:gap-16">
+    <article className="grid items-center grid-cols-[minmax(118px,148px)_minmax(0,1fr)] gap-4 sm:grid-cols-[minmax(104px,220px)_1fr] sm:gap-5 md:items-start md:grid-cols-[220px_1fr] md:gap-10 lg:gap-16">
       {project.href ? (
         <Link to={project.href} className="hoverable pt-2 font-suisse text-black">
           {info}
